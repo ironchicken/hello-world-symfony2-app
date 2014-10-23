@@ -13,10 +13,10 @@ install:
   - sudo /etc/init.d/apache2 restart
 
 before_script:
-  - export MINK_EXTENSION_PARAMS='base_url=http://localhost/app_dev.php'
+#  - export MINK_EXTENSION_PARAMS='base_url=http://localhost'
   - composer self-update
   - composer install --prefer-source --no-interaction
-  - app/console cache:warmup --env=dev > /dev/null
+  - app/console cache:warmup --env=prod > /dev/null
   - sleep 5
 
 script:
