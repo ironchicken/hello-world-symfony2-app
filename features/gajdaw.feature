@@ -1,5 +1,5 @@
-Feature: Web pages in Gajdaw Bundle
+Feature: Web pages
 
   Scenario: Hello world page
     Given I am on "/"
-    Then I should see "Hello, world from gajdaw!"
+    Then I should see "Hello, world!"
