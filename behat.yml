@@ -6,7 +6,7 @@ default:
 
             # The name of the host from Vagrantfile
             # Use app_dev.php to avoid clearing the cache
-            base_url: http://localhost/
+            base_url: http://localhost/app.php/
 
             # or 127.0.0.1
             #base_url: http://127.0.0.1/
