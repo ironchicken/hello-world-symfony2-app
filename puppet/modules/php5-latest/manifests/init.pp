@@ -36,10 +36,10 @@ class php5-latest {
         require => [Package['php5']]
     }
 
-    file { '/etc/apache2/apache2.conf':
-        ensure => file,
-        mode   => 644,
-        source => 'file:///vagrant/apache2.conf'
+    exec { 'change-apache-config':
+      path => '/usr/bin:/usr/sbin:/bin',
+      command => 'sed -i \'s/ ??? /Require all granted/g\' /etc/apache2/apache2.conf',
+      require => [Package['php5']]
     }
 
     exec { 'php-cli-set-timezone':
