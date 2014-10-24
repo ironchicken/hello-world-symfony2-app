@@ -1,10 +1,14 @@
-
 gajdaw_colours:
     resource: "@GajdawColoursBundle/Controller/"
 
+p_mazur_hey:
+    resource: "@PMazurHeyBundle/Controller/"
+
+mazurp_hey:
+    resource: "@mazurpHeyBundle/Controller/"
+
 gajdaw_hey:
     resource: "@GajdawHeyBundle/Controller/"
-
     type:     annotation
     prefix:   /
 
