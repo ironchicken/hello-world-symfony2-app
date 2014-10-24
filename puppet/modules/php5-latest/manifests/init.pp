@@ -36,12 +36,11 @@ class php5-latest {
         require => [Package['php5']]
     }
 
-#    file { '/etc/apache2/apache2.conf':
-#        ensure => file,
-#        mode   => 644,
-#        source => '/vagrant/apache2.conf',
-#        require => [Package['php5']]
-#    }
+    file { '/etc/apache2/apache2.conf':
+        ensure => file,
+        mode   => 644,
+        source => 'file:///vagrant/apache2.conf'
+    }
 
     exec { 'php-cli-set-timezone':
         path => '/usr/bin:/usr/sbin:/bin',
