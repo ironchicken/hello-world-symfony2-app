@@ -1,5 +1,10 @@
+
 gajdaw_colours:
     resource: "@GajdawColoursBundle/Controller/"
+
+gajdaw_hey:
+    resource: "@GajdawHeyBundle/Controller/"
+
     type:     annotation
     prefix:   /
 
