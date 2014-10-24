@@ -1,3 +1,8 @@
+mazurp_hey:
+    resource: "@mazurpHeyBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 gajdaw_hello_world:
     resource: "@GajdawHelloWorldBundle/Controller/"
     type:     annotation
