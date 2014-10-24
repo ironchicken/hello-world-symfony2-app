@@ -1,3 +1,8 @@
+p_mazur_hey:
+    resource: "@PMazurHeyBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 gajdaw_hello_world:
     resource: "@GajdawHelloWorldBundle/Controller/"
     type:     annotation
