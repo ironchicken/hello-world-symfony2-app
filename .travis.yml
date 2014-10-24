@@ -1,10 +1,13 @@
 language: php
 
 php:
+  - 5.3
+  - 5.4
   - 5.5
 
 before_install:
   - sudo apt-get update
+  - sudo rm -rf /dev/shm && sudo ln -s /run/shm /dev/shm
 
 install:
   - sudo apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-intl
@@ -12,9 +15,12 @@ install:
   - sudo /etc/init.d/apache2 restart
 
 before_script:
+  - export MINK_EXTENSION_PARAMS='base_url=http://localhost:8000/app_dev.php'
   - composer self-update
   - composer install --prefer-source --no-interaction
-  - app/console cache:warmup --env=prod
+  - chmod -R 777 app/cache app/logs
+  - app/console cache:warmup --env=dev
+  - chmod -R 777 app/cache app/logs
   - sleep 5
 
 script:
