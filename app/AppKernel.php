@@ -20,15 +20,16 @@ class AppKernel extends Kernel
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new My\UserBundle\MyUserBundle(),
+            
             new Gajdaw\HelloWorldBundle\GajdawHelloWorldBundle(),
+            new Gajdaw\ColoursBundle\GajdawColoursBundle(),
+            new Gajdaw\HeyBundle\GajdawHeyBundle(),
+
 
             new PMazur\HeyBundle\PMazurHeyBundle(),
 
 
             new mazurp\HeyBundle\mazurpHeyBundle(),
-
-            new Gajdaw\HeyBundle\GajdawHeyBundle(),
-
 
         );
 
