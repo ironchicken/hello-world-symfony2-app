@@ -14,10 +14,6 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $response = $this->render('GajdawHelloWorldBundle:Default:index.html.twig');
-        $response->headers->set('Content-Type', 'text/html;charset=utf-8');
-        return $response;
-
-        //return array();
+        return array();
     }
 }
