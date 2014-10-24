@@ -21,7 +21,15 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new My\UserBundle\MyUserBundle(),
             new Gajdaw\HelloWorldBundle\GajdawHelloWorldBundle(),
+
             new PMazur\HeyBundle\PMazurHeyBundle(),
+
+
+            new mazurp\HeyBundle\mazurpHeyBundle(),
+
+            new Gajdaw\HeyBundle\GajdawHeyBundle(),
+
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
