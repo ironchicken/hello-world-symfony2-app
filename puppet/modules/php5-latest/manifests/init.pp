@@ -38,7 +38,7 @@ class php5-latest {
 
     exec { 'change-apache-config':
       path => '/usr/bin:/usr/sbin:/bin',
-      command => 'sed -i \'s/ ??? /Require all granted/g\' /etc/apache2/apache2.conf',
+      command => 'sed -i \'s/Require all denied/Require all granted/g\' /etc/apache2/apache2.conf',
       require => [Package['php5']]
     }
 
