@@ -22,9 +22,13 @@ class AppKernel extends Kernel
             new My\UserBundle\MyUserBundle(),
             new Gajdaw\HelloWorldBundle\GajdawHelloWorldBundle(),
 
+            new PMazur\HeyBundle\PMazurHeyBundle(),
+
+
             new mazurp\HeyBundle\mazurpHeyBundle(),
 
             new Gajdaw\HeyBundle\GajdawHeyBundle(),
+
 
         );
 
