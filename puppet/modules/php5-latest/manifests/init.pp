@@ -28,6 +28,7 @@ class php5-latest {
         require => [Exec['php5-latest:mod-rewrite'], File['/var/www/html']]
     }
 
+#ln -s /var/www/html inny
     file { '/var/www/html':
         path => '/var/www/html',
         ensure => link,

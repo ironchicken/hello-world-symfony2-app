@@ -13,6 +13,7 @@ install:
 #  - sudo sed -i -e "s,/var/www,$(pwd)/web,g" /etc/apache2/sites-available/default
 
   - sudo apt-get install -y --force-yes puppet
+  - sudo ln -s /var/www/html "$(pwd)/web"
   - sudo puppet apply puppet/modules/php-required-tools/manifests/init.pp
   - sudo puppet apply puppet/modules/php5-latest/manifests/init.pp
 
@@ -30,4 +31,3 @@ before_script:
 script:
   - bin/behat --verbose
   - cat /var/log/apache/*
-  
