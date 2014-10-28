@@ -29,13 +29,13 @@ class php5-latest {
     }
 
 #ln -s /var/www/html inny
-    file { '/var/www/html':
-        path => '/var/www/html',
-        ensure => link,
-        force => true,
-        target => '/vagrant/web',
-        require => [Package['php5']]
-    }
+#    file { '/var/www/html':
+#        path => '/var/www/html',
+#        ensure => link,
+#        force => true,
+#        target => '/vagrant/web',
+#        require => [Package['php5']]
+#    }
 
     exec { 'change-apache-config':
       path => '/usr/bin:/usr/sbin:/bin',
