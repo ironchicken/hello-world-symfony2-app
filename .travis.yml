@@ -4,12 +4,26 @@ php:
   - 5.5
 
 before_install:
+  - sudo pwd
   - sudo apt-get update
   - sudo rm -rf /dev/shm && sudo ln -s /run/shm /dev/shm
 
 install:
-  - sudo apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-intl
-  - sudo sed -i -e "s,/var/www,$(pwd)/web,g" /etc/apache2/sites-available/default
+#  - sudo apt-get install -y --force-yes apache2 libapache2-mod-php5 php5-curl php5-intl
+#  - sudo sed -i -e "s,/var/www,$(pwd)/web,g" /etc/apache2/sites-available/default
+
+  - sudo apt-get install -y --force-yes puppet
+  - sudo pwd
+  - sudo mkdir -p /var/www
+  - sudo ls -la /var/www
+  - sudo ln -s  "$(pwd)/web" /var/www/html
+  - sudo ls -la /var/www
+  - sudo puppet apply puppet/modules/php-required-tools/manifests/init.pp
+  - sudo puppet apply puppet/modules/php5-latest/manifests/init.pp
+
+#  - sudo ln -s  "$(pwd)/web" /var/www/html
+  - sudo ls -la /var/www
+
   - sudo /etc/init.d/apache2 restart
 
 before_script:
@@ -22,4 +36,7 @@ before_script:
   - sleep 5
 
 script:
-  - bin/behat --stop-on-failure --verbose
+  - bin/behat --stop-on-failure
+
+#  - bin/behat --stop-on-failure --verbose
+#  - sudo cat /var/log/apache2/*
