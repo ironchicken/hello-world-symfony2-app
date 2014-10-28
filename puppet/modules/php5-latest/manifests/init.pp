@@ -25,17 +25,16 @@ class php5-latest {
     exec { 'php5-latest:restart':
         path => '/usr/bin:/usr/sbin:/bin',
         command => 'service apache2 restart',
-        require => [Exec['php5-latest:mod-rewrite']]
+        require => [Exec['php5-latest:mod-rewrite'], File['/var/www/html']]
     }
 
-#ln -s /var/www/html inny
-#    file { '/var/www/html':
-#        path => '/var/www/html',
-#        ensure => link,
-#        force => true,
-#        target => '/vagrant/web',
-#        require => [Package['php5']]
-#    }
+    file { '/var/www/html':
+        path => '/var/www/html',
+        ensure => link,
+        force => true,
+        target => "$(pwd)/web",
+        require => [Package['php5']]
+    }
 
     exec { 'change-apache-config':
       path => '/usr/bin:/usr/sbin:/bin',
