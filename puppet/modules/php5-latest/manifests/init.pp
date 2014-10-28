@@ -25,7 +25,7 @@ class php5-latest {
     exec { 'php5-latest:restart':
         path => '/usr/bin:/usr/sbin:/bin',
         command => 'service apache2 restart',
-        require => [Exec['php5-latest:mod-rewrite'], File['/var/www/html']]
+        require => [Exec['php5-latest:mod-rewrite']]
     }
 
 #ln -s /var/www/html inny
