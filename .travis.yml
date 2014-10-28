@@ -15,12 +15,13 @@ install:
   - sudo apt-get install -y --force-yes puppet
   - sudo pwd
   - sudo mkdir -p /var/www
-  - sudo ln -s /var/www/html "$(pwd)/web"
+  - sudo ls -la /var/www
+  - sudo ln -s  "$(pwd)/web" /var/www/html
   - sudo ls -la /var/www
   - sudo puppet apply puppet/modules/php-required-tools/manifests/init.pp
   - sudo puppet apply puppet/modules/php5-latest/manifests/init.pp
 
-  - sudo ln -s /var/www/html "$(pwd)/web"
+#  - sudo ln -s  "$(pwd)/web" /var/www/html
   - sudo ls -la /var/www
 
   - sudo /etc/init.d/apache2 restart
