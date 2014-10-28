@@ -14,7 +14,7 @@ install:
 
   - sudo apt-get install -y --force-yes puppet
   - sudo pwd
-  - sudo ls -la /var/www
+  - sudo mkdir -p /var/www
   - sudo ln -s /var/www/html "$(pwd)/web"
   - sudo ls -la /var/www
   - sudo puppet apply puppet/modules/php-required-tools/manifests/init.pp
