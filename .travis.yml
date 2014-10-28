@@ -37,4 +37,4 @@ before_script:
 
 script:
   - bin/behat --verbose
-  - cat /var/log/apache2/*
+#  - sudo cat /var/log/apache2/*
