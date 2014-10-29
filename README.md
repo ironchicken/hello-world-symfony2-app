@@ -1,7 +1,7 @@
 Hello, world! - symfony2 app
 ============================
 
-[![Build Status](https://travis-ci.org/pro-vagrant/hello-world-symfony2-app.svg?branch=exercise-01)](https://travis-ci.org/pro-vagrant/hello-world-symfony2-app)
+[![Build Status](https://travis-ci.org/pro-vagrant/hello-world-symfony2-app.svg?branch=master)](https://travis-ci.org/pro-vagrant/hello-world-symfony2-app)
 
 How to run the application?
 
