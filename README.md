@@ -3,8 +3,6 @@ Hello, world! - symfony2 app
 
 [![Build Status](https://travis-ci.org/pro-vagrant/hello-world-symfony2-app.svg?branch=master)](https://travis-ci.org/pro-vagrant/hello-world-symfony2-app)
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/fef68399-8116-4427-88a4-b27ea9e52609/big.png)](https://insight.sensiolabs.com/projects/fef68399-8116-4427-88a4-b27ea9e52609)
-
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/fef68399-8116-4427-88a4-b27ea9e52609/mini.png)](https://insight.sensiolabs.com/projects/fef68399-8116-4427-88a4-b27ea9e52609)
 
 How to run the application?
