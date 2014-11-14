@@ -1,3 +1,23 @@
+gajdaw_bdd_tutorial_cars:
+    resource: "@GajdawBDDTutorialCarsBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+gajdaw_bdd_tutorial_poems:
+    resource: "@GajdawBDDTutorialPoemsBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+gajdaw_bdd_tutorial_geography:
+    resource: "@GajdawBDDTutorialGeographyBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+gajdaw_bdd_tutorial_biology:
+    resource: "@GajdawBDDTutorialBiologyBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 gajdaw_hello_world:
     resource: "@GajdawHelloWorldBundle/Controller/"
     type:     annotation
