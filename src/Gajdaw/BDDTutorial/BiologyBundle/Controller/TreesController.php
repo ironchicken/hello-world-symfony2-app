@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class TreesController extends Controller
 {
     /**
-     * @Route("/biology/trees/oak.html")
+     * @Route("/biology/trees/oak.html", name="biology-trees-oak")
      * @Template()
      */
     public function oakAction()
