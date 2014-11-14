@@ -10,7 +10,7 @@ class PoeController extends Controller
 {
     
     /**
-     * @Route("/poems/poe/raven.html")
+     * @Route("/poems/poe/raven.html", name="poems-poe-raven")
      * @Template()
      */
     public function ravenAction()
