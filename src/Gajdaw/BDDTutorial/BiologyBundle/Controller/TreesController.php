@@ -18,7 +18,7 @@ class TreesController extends Controller
     }
     
     /**
-    * @Route("/biology/trees/birch.html")
+    * @Route("/biology/trees/birch.html", name="biology-trees-birch")
     * @Template()
     */
     public function birchAction()
