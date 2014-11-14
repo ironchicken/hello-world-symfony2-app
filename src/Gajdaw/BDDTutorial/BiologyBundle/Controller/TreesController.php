@@ -16,4 +16,14 @@ class TreesController extends Controller
     {
         return array();
     }
+    
+    /**
+    * @Route("/biology/trees/birch.html")
+    * @Template()
+    */
+    public function birchAction()
+    {
+        return array();
+    }
+
 }
