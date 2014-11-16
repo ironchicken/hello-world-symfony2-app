@@ -27,7 +27,7 @@ class TreesController extends Controller
     }
     
     /**
-    * @Route("/biology/trees/hornbeam.html")
+    * @Route("/biology/trees/hornbeam.html", name="biology-trees-hornbeam")
     * @Template()
     */
     public function hornbeamAction()
