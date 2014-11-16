@@ -25,5 +25,14 @@ class TreesController extends Controller
     {
         return array();
     }
+    
+    /**
+    * @Route("/biology/trees/hornbeam.html")
+    * @Template()
+    */
+    public function hornbeamAction()
+    {
+        return array();
+    }
 
 }
