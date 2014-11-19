@@ -34,5 +34,14 @@ class TreesController extends Controller
     {
         return array();
     }
+    
+    /**
+    * @Route("/biology/trees/willow.html")
+    * @Template()
+    */
+    public function willowAction()
+    {
+        return array();
+    }
 
 }
