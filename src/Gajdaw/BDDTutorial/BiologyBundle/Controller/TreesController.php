@@ -36,7 +36,7 @@ class TreesController extends Controller
     }
     
     /**
-    * @Route("/biology/trees/willow.html")
+    * @Route("/biology/trees/willow.html", name="biology-trees-willow")
     * @Template()
     */
     public function willowAction()
