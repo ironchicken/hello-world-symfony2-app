@@ -34,4 +34,13 @@ class FlowersController extends Controller
     {
         return array();
     }
+    
+    /**
+     * @Route("/biology/flowers/tulip.html")
+     * @Template()
+     */
+    public function tulipAction()
+    {
+        return array();
+    }
 }
