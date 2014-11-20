@@ -53,4 +53,12 @@ class TreesController extends Controller
         return array();
     }
 
+    /**
+    * @Route("/biology/trees/larch.html")
+    * @Template()
+    */
+    public function larchAction()
+    {
+        return array();
+    }
 }
