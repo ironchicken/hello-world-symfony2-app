@@ -45,7 +45,7 @@ class TreesController extends Controller
     }
     
     /**
-    * @Route("/biology/trees/pine.html")
+    * @Route("/biology/trees/pine.html", name="biology-trees-pine")
     * @Template()
     */
     public function pineAction()
