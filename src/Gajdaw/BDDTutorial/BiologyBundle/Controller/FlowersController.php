@@ -25,4 +25,13 @@ class FlowersController extends Controller
     {
         return array();
     }
+    
+    /**
+     * @Route("/biology/flowers/violet.html")
+     * @Template()
+     */
+    public function violetAction()
+    {
+        return array();
+    }
 }
