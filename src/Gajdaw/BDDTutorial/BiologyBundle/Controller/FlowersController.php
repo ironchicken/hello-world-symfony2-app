@@ -16,4 +16,13 @@ class FlowersController extends Controller
     {
         return array();
     }
+    
+    /**
+     * @Route("/biology/flowers/iris.html")
+     * @Template()
+     */
+    public function irisAction()
+    {
+        return array();
+    }
 }
