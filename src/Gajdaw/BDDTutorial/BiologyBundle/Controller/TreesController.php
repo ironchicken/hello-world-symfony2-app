@@ -43,5 +43,14 @@ class TreesController extends Controller
     {
         return array();
     }
+    
+    /**
+    * @Route("/biology/trees/pine.html")
+    * @Template()
+    */
+    public function pineAction()
+    {
+        return array();
+    }
 
 }
