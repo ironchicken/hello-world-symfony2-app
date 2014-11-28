@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class FlowersController extends Controller
 {
     /**
-     * @Route("/biology/flowers/rose.html")
+     * @Route("/biology/flowers/rose.html", name="biology-flowers-rose")
      * @Template()
      */
     public function roseAction()
@@ -18,7 +18,7 @@ class FlowersController extends Controller
     }
     
     /**
-     * @Route("/biology/flowers/iris.html")
+     * @Route("/biology/flowers/iris.html", name="biology-flowers-iris")
      * @Template()
      */
     public function irisAction()
@@ -27,7 +27,7 @@ class FlowersController extends Controller
     }
     
     /**
-     * @Route("/biology/flowers/violet.html")
+     * @Route("/biology/flowers/violet.html", name="biology-flowers-violet")
      * @Template()
      */
     public function violetAction()
@@ -36,7 +36,7 @@ class FlowersController extends Controller
     }
     
     /**
-     * @Route("/biology/flowers/tulip.html")
+     * @Route("/biology/flowers/tulip.html", name="biology-flowers-tulip")
      * @Template()
      */
     public function tulipAction()
