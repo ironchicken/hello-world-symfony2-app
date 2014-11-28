@@ -13,6 +13,7 @@ install:
   - sudo ln -s  "$(pwd)/web" /var/www/html
   - sudo puppet apply puppet/modules/php-required-tools/manifests/init.pp
   - sudo puppet apply puppet/modules/php5-latest/manifests/init.pp
+  - sudo puppet apply puppet/modules/mysql/manifests/init.pp  
   - sudo /etc/init.d/apache2 restart
 
 before_script:
@@ -21,6 +22,8 @@ before_script:
   - chmod -R 777 app/cache app/logs
   - app/console cache:warmup --env=dev
   - chmod -R 777 app/cache app/logs
+  - mysql -u root < 00-extra/db/create-empty-database.sql
+  - app/console doctrine:schema:update --force
   - sleep 5
 
 script:
