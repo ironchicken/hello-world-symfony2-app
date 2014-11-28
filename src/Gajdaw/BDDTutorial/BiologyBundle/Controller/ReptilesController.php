@@ -16,4 +16,15 @@ class ReptilesController extends Controller
     {
         return array();
     }
+    
+    /**
+     * @Route("/biology/reptiles/rattlesnake.html")
+     * @Template()
+     */
+    public function rattlesnakeAction()
+    {
+        return array();
+    }
+    
+    
 }
