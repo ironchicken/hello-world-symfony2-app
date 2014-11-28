@@ -16,4 +16,13 @@ class CitroenController extends Controller
     {
         return array();
     }
+    
+    /**
+     * @Route("/cars/citroen/xara.html")
+     * @Template()
+     */
+    public function xaraAction()
+    {
+        return array();
+    }
 }
