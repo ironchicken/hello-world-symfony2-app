@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class ReptilesController extends Controller
 {
     /**
-     * @Route("/biology/reptiles/aligator.html")
+     * @Route("/biology/reptiles/aligator.html", name="biology-reptiles-aligator")
      * @Template()
      */
     public function aligatorAction()
@@ -18,7 +18,7 @@ class ReptilesController extends Controller
     }
     
     /**
-     * @Route("/biology/reptiles/rattlesnake.html")
+     * @Route("/biology/reptiles/rattlesnake.html", name="biology-reptiles-rattlesnake")
      * @Template()
      */
     public function rattlesnakeAction()
