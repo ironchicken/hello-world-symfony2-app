@@ -20,7 +20,7 @@ public function asiaAction()
     
     
     /**
-     * @Route("/geography/continents/europe.html")
+     * @Route("/geography/continents/europe.html", name="geography-continents-europe")
      * @Template()
      */
     public function europeAction()
