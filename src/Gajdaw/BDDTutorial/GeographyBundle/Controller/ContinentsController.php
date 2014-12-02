@@ -17,5 +17,16 @@ class ContinentsController extends Controller
     {
         return array();
     }
+    
+    
+    /**
+     * @Route("/geography/continents/europe.html")
+     * @Template()
+     */
+    public function europeAction()
+    {
+        return array();
+    }
+
 
 }
