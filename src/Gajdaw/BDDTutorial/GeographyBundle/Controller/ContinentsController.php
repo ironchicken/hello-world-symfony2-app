@@ -6,14 +6,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class DefaultController extends Controller
+class ContinentsController extends Controller
 {
-    /**
-     * @Route("/hello/{name}")
+
+/**
+     * @Route("/geography/continents/asia.html")
      * @Template()
      */
-    public function indexAction($name)
+    public function asiaAction()
     {
-        return array('name' => $name);
+        return array();
     }
+
 }
