@@ -10,13 +10,13 @@ class ContinentsController extends Controller
 {
 
 /**
-     * @Route("/geography/continents/asia.html")
-     * @Template()
-     */
-    public function asiaAction()
-    {
-        return array();
-    }
+ * @Route("geography/continents/asia.html", name="geography-continents-asia")
+ * @Template()
+ */
+public function asiaAction()
+{
+    return array();
+}
     
     
     /**
