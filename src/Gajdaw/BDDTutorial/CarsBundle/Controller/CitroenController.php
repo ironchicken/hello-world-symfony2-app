@@ -18,7 +18,7 @@ class CitroenController extends Controller
     }
     
     /**
-     * @Route("/cars/citroen/xara.html")
+     * @Route("/cars/citroen/xara.html", name="cars-citroen-xara")
      * @Template()
      */
     public function xaraAction()
