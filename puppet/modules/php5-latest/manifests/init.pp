@@ -16,6 +16,11 @@ class php5-latest {
         require => [Exec['php5-latest:apt-get-update']]
     }
 
+    package { 'php5-mysql':
+        ensure => installed,
+        require => Package['php5']
+    }
+
     exec { 'php5-latest:mod-rewrite':
         path => '/usr/bin:/usr/sbin:/bin',
         command => 'a2enmod rewrite',

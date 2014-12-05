@@ -1,3 +1,8 @@
+gajdaw_rivers:
+    resource: "@GajdawRiversBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 gajdaw_bdd_tutorial_cars:
     resource: "@GajdawBDDTutorialCarsBundle/Controller/"
     type:     annotation

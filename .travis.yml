@@ -8,23 +8,84 @@ before_install:
   - sudo apt-get update
 
 install:
+  - php --info
   - sudo apt-get install -y --force-yes puppet
   - sudo mkdir -p /var/www
   - sudo ln -s  "$(pwd)/web" /var/www/html
   - sudo puppet apply puppet/modules/php-required-tools/manifests/init.pp
   - sudo puppet apply puppet/modules/php5-latest/manifests/init.pp
+  - sudo puppet apply puppet/modules/mysql/manifests/init.pp  
   - sudo /etc/init.d/apache2 restart
 
 before_script:
   - composer self-update
   - composer install --no-interaction
-  - chmod -R 777 app/cache app/logs
+  - pwd
+  - ls -la
+  - ls -la app
+  - ls -la app/logs
+  - ls -la app/cache
+  - sudo chmod -R 777 app/cache app/logs
   - app/console cache:warmup --env=dev
+  - sudo chmod -R 777 app/cache app/logs
+  - ls -la app
+  - ls -la app/logs
+  - ls -la app/cache
+
+
+  - chmod o+w app/logs
+  - ls -la app
+
+
+  - mysql -u root < 00-extra/db/create-empty-database.sql
+  - app/console doctrine:schema:update --force
+  - ls -la app
+  - ls -la app/logs
+
+
+  - sudo chmod -R 777 app/cache app/logs
+  - ls -la app
+  - ls -la app/logs
+  - ls -la app/cache
+
+
+
+
+#change ownership
+  - chown -R travis:travis app/logs
+  - ls -la app
+  - ls -la app/logs
+
+#change the rights right before you run application
   - chmod -R 777 app/cache app/logs
+  - ls -la app
+  - ls -la app/logs
+
+
+#change the rights right before you run application
+  - chmod -R 777 app/logs/dev.log
+  - ls -la app
+  - ls -la app/logs
+
+#change the rights right before you run application
+  - sudo chmod -R 777 app/logs/dev.log
+  - ls -la app
+  - ls -la app/logs
+
+
+#Sessions go to /tmp/sessions
+  - sudo mkdir -p /tmp/sessions
+  - sudo chmod -R 777 /tmp/sessions
+  - ls -la /tmp/sessions
+  - ls -la /tmp
+
+
+
+
   - sleep 5
 
 script:
-  - bin/behat --stop-on-failure
+  - bin/behat --verbose --stop-on-failure
 
 notifications:
   email: false
