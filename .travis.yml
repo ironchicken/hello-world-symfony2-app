@@ -38,9 +38,12 @@ before_script:
 
   - mysql -u root < 00-extra/db/create-empty-database.sql
   - app/console doctrine:schema:update --force
-
-  - chown -R www-data:www-data app/logs
   - ls -la app
+  - ls -la app/logs
+
+  - chown -R travis:travis app/logs
+  - ls -la app
+  - ls -la app/logs
 
 
   - sleep 5
