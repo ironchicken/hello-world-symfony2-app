@@ -6,7 +6,7 @@ Feature: I would like to edit countries
      And I follow "Create a new entry"
     Then I should see "River creation"
     When I fill in "Name" with "<country>"
-     And I fill in "Length" with "<area>"
+     And I fill in "Area" with "<area>"
      And I press "Create"
     Then I should see "<country>"
      And I should see "<area>"
@@ -24,7 +24,7 @@ Feature: I would like to edit countries
     Then I should see "<old-country>"
     When I follow "Edit"
     When I fill in "Name" with "<new-country>"
-     And I fill in "Length" with "<new-area>"
+     And I fill in "Area" with "<new-area>"
      And I press "Update"
      And I follow "Back to the list"
     Then I should see "<new-country>"
@@ -46,6 +46,6 @@ Feature: I would like to edit countries
      And I should not see "<country>"
 
   Examples:
-    |  river           |
+    |  country         |
     | Example Germany  |
     | EDITED France    |
