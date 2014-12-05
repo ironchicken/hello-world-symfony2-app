@@ -73,6 +73,15 @@ before_script:
   - ls -la app/logs
 
 
+#Sessions go to /tmp/sessions
+  - sudo mkdir -p /tmp/sessions
+  - sudo chmod -R 777 /tmp/sessions
+  - ls -la /tmp/sessions
+  - ls -la /tmp
+
+
+
+
   - sleep 5
 
 script:
