@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class RiversController extends Controller
 {
     /**
-     * @Route("/geography/rivers/nile")
+     * @Route("/geography/rivers/nile.html")
      * @Template()
      */
     public function nileAction()
