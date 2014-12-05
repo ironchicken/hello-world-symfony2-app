@@ -8,6 +8,7 @@ before_install:
   - sudo apt-get update
 
 install:
+  - php --info
   - sudo apt-get install -y --force-yes puppet
   - sudo mkdir -p /var/www
   - sudo ln -s  "$(pwd)/web" /var/www/html
