@@ -27,7 +27,7 @@ before_script:
   - sleep 5
 
 script:
-  - bin/behat --stop-on-failure
+  - bin/behat --verbose --stop-on-failure
 
 notifications:
   email: false
