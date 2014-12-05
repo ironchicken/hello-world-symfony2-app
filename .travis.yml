@@ -24,9 +24,9 @@ before_script:
   - ls -la app
   - ls -la app/logs
   - ls -la app/cache
-  - chmod -R 777 app/cache app/logs
+  - sudo chmod -R 777 app/cache app/logs
   - app/console cache:warmup --env=dev
-  - chmod -R 777 app/cache app/logs
+  - sudo chmod -R 777 app/cache app/logs
   - ls -la app
   - ls -la app/logs
   - ls -la app/cache
@@ -40,6 +40,14 @@ before_script:
   - app/console doctrine:schema:update --force
   - ls -la app
   - ls -la app/logs
+
+
+  - sudo chmod -R 777 app/cache app/logs
+  - ls -la app
+  - ls -la app/logs
+  - ls -la app/cache
+
+
 
 
 #change ownership

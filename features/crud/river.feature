@@ -3,12 +3,17 @@ Feature: I would like to edit rivers
   Scenario Outline: Insert records
     When I go to "/admin/river"
     Then I dump the contents
+    Then the response status code should be 200
     Then I should not see "<river>"
      And I follow "Create a new entry"
+    Then I dump the contents
+    Then the response status code should be 200
     Then I should see "River creation"
     When I fill in "Name" with "<river>"
      And I fill in "Length" with "<length>"
      And I press "Create"
+    Then I dump the contents
+    Then the response status code should be 200
     Then I should see "<river>"
      And I should see "<length>"
 
