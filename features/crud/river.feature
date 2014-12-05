@@ -21,9 +21,9 @@ Feature: I would like to edit rivers
     |    river    | length |
     | ABC         | 7182   |
     | Vistula     | 1234   |
-    | The Thames  | 555    |
-    | Lorem       | 6      |
-    | Ipsum       | 999999 |
+#    | The Thames  | 555    |
+#    | Lorem       | 6      |
+#    | Ipsum       | 999999 |
 
 
   Scenario Outline: Edit records
@@ -43,7 +43,7 @@ Feature: I would like to edit rivers
   Examples:
     |  old-river    |    new-river    | new-length |
     | Vistula       | VI-stula        | 9876       |
-    | Lorem         | Dolor sit amet  | 3333       |
+#    | Lorem         | Dolor sit amet  | 3333       |
 
 
 
@@ -57,12 +57,12 @@ Feature: I would like to edit rivers
 
   Examples:
     |  river    |
-    | Ipsum     |
     | ABC       |
+    | VI-stula  |
 
 
 
   Scenario: I want to check the number of records
     When I go to "/admin/river"
-    Then I should see 3 ".records_list tbody tr" elements
+    Then I should see 0 ".records_list tbody tr" elements
 
