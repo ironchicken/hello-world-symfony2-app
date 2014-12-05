@@ -12,9 +12,9 @@ Feature: I would like to edit deserts
      And I should see "<area>"
 
   Examples:
-    | desert  | area    |
-    | Gobi    | 1295000 |
-    | Ogaden  | 327068  |
+    | desert              | area    |
+    | Example the Gobi    | 1295000 |
+    | Example the Ogaden  | 327068  |
 
 
   Scenario Outline: Edit records
@@ -24,7 +24,7 @@ Feature: I would like to edit deserts
     Then I should see "<old-desert>"
     When I follow "Edit"
     When I fill in "Name" with "<new-desert>"
-     And I fill in "Length" with "<new-area>"
+     And I fill in "Area" with "<new-area>"
      And I press "Update"
      And I follow "Back to the list"
     Then I should see "<new-desert>"
@@ -32,8 +32,8 @@ Feature: I would like to edit deserts
      And I should not see "<old-desert>"
 
   Examples:
-    | desert | new-desert  | new-area |
-    | Gobi   | EDITED Gobi | 1295111  |
+    | old-desert       | new-desert  | new-area |
+    | Example the Gobi | EDITED Gobi | 1295111  |
 
 
 
@@ -46,6 +46,6 @@ Feature: I would like to edit deserts
      And I should not see "<desert>"
 
   Examples:
-    | desert      |
-    | Ogaden      |
-    | EDITED Gobi |
+    | desert             |
+    | Example the Ogaden |
+    | EDITED Gobi        |
