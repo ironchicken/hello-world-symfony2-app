@@ -41,7 +41,25 @@ before_script:
   - ls -la app
   - ls -la app/logs
 
+
+#change ownership
   - chown -R travis:travis app/logs
+  - ls -la app
+  - ls -la app/logs
+
+#change the rights right before you run application
+  - chmod -R 777 app/cache app/logs
+  - ls -la app
+  - ls -la app/logs
+
+
+#change the rights right before you run application
+  - chmod -R 777 app/logs/dev.log
+  - ls -la app
+  - ls -la app/logs
+
+#change the rights right before you run application
+  - sudo chmod -R 777 app/logs/dev.log
   - ls -la app
   - ls -la app/logs
 
