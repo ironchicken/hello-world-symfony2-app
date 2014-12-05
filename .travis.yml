@@ -19,9 +19,17 @@ install:
 before_script:
   - composer self-update
   - composer install --no-interaction
+  - pwd
+  - ls -la
+  - ls -la app
+  - ls -la app/logs
+  - ls -la app/cache
   - chmod -R 777 app/cache app/logs
   - app/console cache:warmup --env=dev
   - chmod -R 777 app/cache app/logs
+  - ls -la app
+  - ls -la app/logs
+  - ls -la app/cache
   - mysql -u root < 00-extra/db/create-empty-database.sql
   - app/console doctrine:schema:update --force
   - sleep 5
