@@ -33,7 +33,7 @@ Feature: I would like to edit lakes
 
   Examples:
     |  old-lake        |    new-lake    | new-length |
-    | Example The Hancza  | EDITED The Hancza | 88        |
+    | Example The Hancza  | EDITED Bialka | 88        |
 
 
 
@@ -48,4 +48,4 @@ Feature: I would like to edit lakes
   Examples:
     |  lake              |
     | Example The Firlej |
-    | EDITED The Hancza  |
+    | EDITED Bialka  |
