@@ -33,7 +33,7 @@ Feature: I would like to edit lakes
 
   Examples:
     |  old-lake        |    new-lake    | new-length |
-    | Example The Firlej  | EDITED The Biale | 32        |
+    | Example The Firlej  | EDITED The Firlej | 32        |
 
 
 
