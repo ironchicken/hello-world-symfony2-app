@@ -13,7 +13,7 @@ Feature: I would like to edit lakes
 
   Examples:
     |    lake            | depth |
-    | Example The Bajkal    | 582   |
+    | Example The Hancza    | 109   |
     | Example The Firlej | 32  |
 
 
@@ -33,7 +33,7 @@ Feature: I would like to edit lakes
 
   Examples:
     |  old-lake        |    new-lake    | new-length |
-    | Example The Firlej  | EDITED The Firlej | 32        |
+    | Example The Hancza  | EDITED The Hancza | 88        |
 
 
 
@@ -47,5 +47,5 @@ Feature: I would like to edit lakes
 
   Examples:
     |  lake              |
-    | Example The Bajkal|
-    | EDITED The Firlej     |
+    | Example The Firlej |
+    | EDITED The Hancza  |
