@@ -32,7 +32,7 @@ Feature: I would like to edit lakes
      And I should not see "<old-lake>"
 
   Examples:
-    |  old-lake        |    new-lake    | new-length |
+    |  old-lake        |    new-lake    | new-depth |
     | Example The Hancza  | EDITED Bialka | 88        |
 
 
