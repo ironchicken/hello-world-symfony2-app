@@ -16,7 +16,7 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('channel_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.channel }}</td>
+                <td><a href="{{ path('channel_show', { 'id': entity.id }) }}">{{ entity.channel }}</a></td>
                 <td>{{ entity.length }}</td>
                 <td>
                 <ul>
