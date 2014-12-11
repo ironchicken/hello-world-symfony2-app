@@ -1,5 +1,3 @@
-GajdawBDDTutorialGeographyBundle:Mountain
-
 Feature: I would like to edit mountains
 
   Scenario Outline: Insert records
