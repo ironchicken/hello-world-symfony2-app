@@ -47,5 +47,5 @@ Feature: I would like to edit continents
 
   Examples:
     |  continent          |
-    | Example The Europe  |
-    | EDITED The Asia     |
+    | Example The Asia    |
+    | EDITED The Europe   |
