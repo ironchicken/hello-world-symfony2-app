@@ -1,4 +1,4 @@
-Feature: I would like to edit rivers
+Feature: I would like to edit continents
 
   Scenario Outline: Insert records
     When I go to "/continent"
