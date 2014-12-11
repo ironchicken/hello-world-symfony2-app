@@ -33,7 +33,7 @@ Feature: I would like to edit straits
 
   Examples:
     |  old-strait        |    new-strait     | new-length |
-    | Example The Bosfor | EDITED The Bosfor | 911        |
+    | Example The Bosfor | EDITED The Bosfor | 231        |
 
 
 
