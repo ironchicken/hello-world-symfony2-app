@@ -88,7 +88,15 @@
             <!-- straits -->
             
             <!-- peninsulas -->
-            <li><a href="{{ path('peninsula') }}">Peninsulas</a></li>
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('peninsula') }}" role="button" aria-expanded="false">
+                    Peninsulas <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ path('peninsula') }}">list</a></li>
+                    <li><a href="{{ path('peninsula_new') }}">create new</a></li>
+                </ul>
+            </li>           
             <!-- peninsulas -->      
         </ul>
         {% block body %}{% endblock %}
