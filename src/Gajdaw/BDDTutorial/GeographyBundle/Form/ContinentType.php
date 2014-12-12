@@ -23,10 +23,13 @@ class ContinentType extends AbstractType
     /**
      * @param OptionsResolverInterface $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
+    public function setDefaultOptions(OptionsResolverInterface $resolver) {
         $resolver->setDefaults(array(
-            'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Continent'
+            'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Continent',
+            'attr' => array(
+                'class' => 'form-horizontal',
+                'role' => 'form',
+            ),
         ));
     }
 
