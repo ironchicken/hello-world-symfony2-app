@@ -1,15 +1,45 @@
+
 {% extends '::base.html.twig' %}
 
 {% block body -%}
     <h1>River creation</h1>
 
-    {{ form(form) }}
+{{ form_start(form) }}
 
-        <ul class="record_actions">
+{#{{ form_start(form, {'class': 'abc'}) }}    #}
+
+    {{ form_errors(form) }}
+
+    <div class="form-group">
+        {{ form_errors(form.name) }}
+        {{ form_label(form.name, 'Name', {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+        <div class="col-sm-10">
+            {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_errors(form.length) }}
+        {{ form_label(form.length, 'Length', {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+        <div class="col-sm-10">
+            {{ form_widget(form.length, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            {{ form_widget(form.submit, {'attr': {'class': 'btn btn-default'}}) }}
+        </div>
+    </div>
+
+{{ form_end(form) }}
+
+<ul class="record_actions">
     <li>
         <a href="{{ path('river') }}">
             Back to the list
         </a>
     </li>
 </ul>
+
 {% endblock %}
