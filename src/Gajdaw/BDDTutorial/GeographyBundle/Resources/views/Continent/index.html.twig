@@ -17,7 +17,7 @@
             <tr>
                 <td>{{ loop.index }}.</td>
                 <td><a href="{{ path('continent_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
-                <td>{{ entity.depth }}</td>
+                <td>{{ entity.area }}</td>
                 <td>
                     <a href="{{ path('continent_show', { 'id': entity.id }) }}" class="btn btn-default" role="button">show</a>
                     <a href="{{ path('continent_edit', { 'id': entity.id }) }}" class="btn btn-default" role="button">edit</a>
