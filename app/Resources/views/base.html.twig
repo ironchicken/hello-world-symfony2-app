@@ -20,7 +20,15 @@
             <!-- oceans -->
 
             <!-- deserts -->
-            <li><a href="{{ path('desert') }}">Deserts</a></li>
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('desert') }}" role="button" aria-expanded="false">
+                    Straits <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ path('desert') }}">list</a></li>
+                    <li><a href="{{ path('desert_new') }}">create new</a></li>
+                </ul>
+            </li>
             <!-- deserts -->
 
             <!-- seas -->
