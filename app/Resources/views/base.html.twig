@@ -45,7 +45,15 @@
             <!-- mountains -->
 
             <!-- continents -->
-            <li><a href="{{ path('continent') }}">Continents</a></li>
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('continent') }}" role="button" aria-expanded="false">
+                    Continents <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ path('continent') }}">list</a></li>
+                    <li><a href="{{ path('continent_new') }}">create new</a></li>
+                </ul>
+            </li>
             <!-- continents -->
 
             <!-- countries -->
