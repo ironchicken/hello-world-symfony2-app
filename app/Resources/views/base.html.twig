@@ -3,17 +3,28 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            {% stylesheets '@GajdawBDDTutorialGeographyBundle/Resources/public/css/*' filter='cssrewrite' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         <h1><a href="{{ path('homepage') }}">Geography</a></h1>
-        <ul>
-            <!-- rivers -->
-            <li><a href="{{ path('river') }}">Rivers</a></li>
-            <!-- rivers -->
 
+
+        <ul class="nav nav-tabs">
             <!-- rivers -->
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('river') }}" role="button" aria-expanded="false">
+                    Rivers <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ path('river') }}">list</a></li>
+                    <li><a href="{{ path('river_new') }}">create new</a></li>
+                </ul>
+            </li>
             <!-- rivers -->
 
             <!-- oceans -->
@@ -57,6 +68,11 @@
             <!-- peninsulas -->      
         </ul>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {% javascripts '@GajdawBDDTutorialGeographyBundle/Resources/public/js/*' %}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
     </body>
 </html>
