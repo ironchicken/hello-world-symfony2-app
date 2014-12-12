@@ -21,12 +21,16 @@ class MountainType extends AbstractType
     }
     
     /**
-     * @param OptionsResolverInterface $resolver
-     */
+    * @param OptionsResolverInterface $resolver
+    */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Mountain'
+    $resolver->setDefaults(array(
+        'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Mountain',
+            'attr' => array(
+                'class' => 'form-horizontal',
+                'role'  => 'form',
+            ),
         ));
     }
 
