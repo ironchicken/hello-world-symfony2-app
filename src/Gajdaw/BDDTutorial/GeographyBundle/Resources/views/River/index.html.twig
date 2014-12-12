@@ -3,7 +3,7 @@
 {% block body -%}
     <h1>River list</h1>
 
-    <table class="records_list">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -15,19 +15,14 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('river_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ loop.index }}.</td>
                 <td><a href="{{ path('river_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
                 <td>{{ entity.length }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('river_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('river_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                    <a href="{{ path('river_show', { 'id': entity.id }) }}" class="btn btn-default" role="button">show</a>
+                    <a href="{{ path('river_edit', { 'id': entity.id }) }}" class="btn btn-default" role="button">edit</a>
                 </td>
+
             </tr>
         {% endfor %}
         </tbody>
