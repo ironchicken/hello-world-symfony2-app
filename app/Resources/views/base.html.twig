@@ -49,7 +49,15 @@
             <!-- continents -->
 
             <!-- countries -->
-            <li><a href="{{ path('country') }}">Countries</a></li>
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('country') }}" role="button" aria-expanded="false">
+                    Countries <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ path('country') }}">list</a></li>
+                    <li><a href="{{ path('country_new') }}">create new</a></li>
+                </ul>
+            </li>
             <!-- countries -->
             
             <!-- channels -->
