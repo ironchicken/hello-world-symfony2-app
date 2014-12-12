@@ -40,7 +40,7 @@ Feature: I would like to edit mountains
   Scenario Outline: Delete records
     When I go to "/mountain"
     Then I should see "<mountain>"
-     And I follow "mountain>"
+     And I follow "<mountain>"
     Then I should see "<mountain>"
     When I press "Delete"
      And I should not see "<mountain>"
