@@ -59,7 +59,15 @@
             <!-- seas -->
 
             <!-- lakes -->
-            <li><a href="{{ path('lake') }}">Lakes</a></li>
+            <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('lake') }}" role="button" aria-expanded="false">
+        Lakes <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+        <li><a href="{{ path('lake') }}">list</a></li>
+        <li><a href="{{ path('lake_new') }}">create new</a></li>
+      </ul>
+            </li>
             <!-- lakes -->
 
             <!-- mountains -->

@@ -21,14 +21,18 @@ class LakeType extends AbstractType
     }
     
     /**
-     * @param OptionsResolverInterface $resolver
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Lake'
-        ));
-    }
+ * @param OptionsResolverInterface $resolver
+ */
+public function setDefaultOptions(OptionsResolverInterface $resolver)
+{
+    $resolver->setDefaults(array(
+        'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Lake',
+            'attr' => array(
+                'class' => 'form-horizontal',
+                'role'  => 'form',
+            ),
+    ));
+}
 
     /**
      * @return string
