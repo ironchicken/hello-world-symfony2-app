@@ -15,6 +15,8 @@ class RiverType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+//            ->add('name', 'text', array('attr' => array('class' => 'form-control')))
+//            ->add('length', 'text', array('attr' => array('class' => 'form-control')))
             ->add('name')
             ->add('length')
         ;
@@ -26,7 +28,11 @@ class RiverType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\River'
+            'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\River',
+            'attr' => array(
+                'class' => 'form-horizontal',
+                'role'  => 'form',
+            ),
         ));
     }
 
