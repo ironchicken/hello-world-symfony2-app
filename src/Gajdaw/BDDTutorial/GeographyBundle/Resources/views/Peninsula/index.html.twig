@@ -3,34 +3,32 @@
 {% block body -%}
     <h1>Peninsula list</h1>
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Area</th>
-                <th>Actions</th>
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Area</th>
+            <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
+    </thead>
+    <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('peninsula_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td><a href="{{ path('peninsula_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
+                <td>{{ loop.index }}.</td>
+                <td>
+                <a href="{{ path('peninsula_show', { 'id': entity.id }) }}">
+                    {{ entity.name }}
+                </a>
+                </td>
                 <td>{{ entity.area }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('peninsula_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('peninsula_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
+                    <a href="{{ path('peninsula_show', { 'id': entity.id }) }}" class="btn btn-default" role="button">show</a>
+                    <a href="{{ path('peninsula_edit', { 'id': entity.id }) }}" class="btn btn-default" role="button">edit</a>
                 </td>
             </tr>
         {% endfor %}
-        </tbody>
+    </tbody>
     </table>
 
         <ul>
