@@ -26,7 +26,11 @@ class PeninsulaType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Peninsula'
+            'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Peninsula',
+            'attr' => array(
+                'class' => 'form-horizontal',
+                'role'  => 'form',
+            ),
         ));
     }
 
