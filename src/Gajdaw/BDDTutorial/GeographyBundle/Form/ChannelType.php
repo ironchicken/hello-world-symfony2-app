@@ -26,7 +26,11 @@ class ChannelType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Channel'
+            'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Channel',
+            'attr' => array(
+                'class' => 'form-horizontal',
+                'role'  => 'form',
+            ),
         ));
     }
 
