@@ -114,7 +114,15 @@
             <!-- cities -->
             
             <!-- straits -->
-            <li><a href="{{ path('strait') }}">Straits</a></li>
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="{{ path('strait') }}" role="button" aria-expanded="false">
+                    Straits <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ path('strait') }}">list</a></li>
+                    <li><a href="{{ path('strait_new') }}">create new</a></li>
+                </ul>
+            </li>
             <!-- straits -->
             
             <!-- peninsulas -->
