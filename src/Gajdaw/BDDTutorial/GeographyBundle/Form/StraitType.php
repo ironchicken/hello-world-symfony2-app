@@ -23,10 +23,14 @@ class StraitType extends AbstractType
     /**
      * @param OptionsResolverInterface $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function setDefaultOptions(OptionsResolverInterface $resolver) 
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Strait'
+            'data_class' => 'Gajdaw\BDDTutorial\GeographyBundle\Entity\Strait',
+            'attr' => array(
+                'class' => 'form-horizontal',
+                'role' => 'form',
+            ),
         ));
     }
 
