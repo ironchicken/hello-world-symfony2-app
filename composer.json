@@ -51,7 +51,7 @@
     },
     "config": {
         "bin-dir": "bin",
-        "vendor-dir": "/tmp/vendor"
+        "vendor-dir": "/tmp/symfony2app/vendor"
     },
     "minimum-stability": "stable",
     "extra": {

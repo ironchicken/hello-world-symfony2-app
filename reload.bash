@@ -6,6 +6,10 @@ then
     exit 1
 fi
 
+mkdir -p /tmp/symfony2app/app/cache
+mkdir -p /tmp/symfony2app/app/logs
+mkdir -p /tmp/symfony2app/vendor/
+
 php app/console cache:clear --env=prod
 php app/console cache:warmup --env=prod
 
