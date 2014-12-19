@@ -1,0 +1,3 @@
+- { name: Europe, area: 100000 }
+- { name: Asia, area: 900000 }
+- { name: Australia, area: 123456 }
