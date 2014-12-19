@@ -1,3 +1,7 @@
-- { name: Europe, area: 100000 }
-- { name: Asia, area: 900000 }
-- { name: Australia, area: 123456 }
+- { name: Europe, area: 10180000 }
+- { name: Asia, area: 44579000 }
+- { name: Australia, area: 8468300 }
+- { name: South America, area: 17840000 }
+- { name: North America, area: 24709000 }
+- { name: Antarctica, area: 14000000  }
+- { name: Africa, area: 30221532 }
