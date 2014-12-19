@@ -24,7 +24,7 @@ Feature: I would like to edit beaches
     Then I should see "<old-beach>"
     When I follow "Edit"
     When I fill in "Name" with "<new-beach>"
-     And I fill in "Length" with "<new-size>"
+     And I fill in "Size" with "<new-size>"
      And I press "Update"
      And I follow "Back to the list"
     Then I should see "<new-beach>"
@@ -46,6 +46,6 @@ Feature: I would like to edit beaches
      And I should not see "<beach>"
 
   Examples:
-    |  river                      |
+    |  beach                      |
     | Example 90 Mile Beach       |
     | EDITED Praia do Cassino     |
