@@ -2,6 +2,14 @@
 
 {% block body -%}
     <h1>Mountain list</h1>
+    <div class="count">
+        Number of records: {{ pagination.getTotalItemCount }}
+    </div>
+
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
 
         <table class="table table-striped">
 
@@ -14,14 +22,14 @@
                 </tr>
             </thead>
             <tbody>
-            {% for entity in entities %}
+            {% for mountain in pagination %}
                 <tr>
                <td>{{ loop.index }}.</td>
-                    <td><a href="{{ path('mountain_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
-                    <td>{{ entity.hight }}</td>
+                    <td><a href="{{ path('mountain_show', { 'id': mountain.id }) }}">{{ mountain.name }}</a></td>
+                    <td>{{ mountain.hight }}</td>
                     <td>
-                   <a href="{{ path('mountain_show', { 'id': entity.id }) }}" class="btn btn-default" role="button">show</a>
-                   <a href="{{ path('mountain_edit', { 'id': entity.id }) }}" class="btn btn-default" role="button">edit</a>
+                   <a href="{{ path('mountain_show', { 'id': mountain.id }) }}" class="btn btn-default" role="button">show</a>
+                   <a href="{{ path('mountain_edit', { 'id': mountain.id }) }}" class="btn btn-default" role="button">edit</a>
                     </td>
                 </tr>
             {% endfor %}

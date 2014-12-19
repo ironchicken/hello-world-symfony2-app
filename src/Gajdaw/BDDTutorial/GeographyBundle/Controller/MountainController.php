@@ -19,22 +19,30 @@ class MountainController extends Controller
 {
 
     /**
-     * Lists all Mountain entities.
-     *
-     * @Route("/", name="mountain")
-     * @Method("GET")
-     * @Template()
-     */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
+    * Lists all River entities.
+    *
+    * @Route("/{page}", name="mountain")
+    * @Method("GET")
+    * @Template()
+    */
+       public function indexAction($page = 1)
+        {
+            $em    = $this->get('doctrine.orm.entity_manager');
+            $dql   = "SELECT r FROM GajdawBDDTutorialGeographyBundle:River r";
+            $query = $em->createQuery($dql);
 
-        $entities = $em->getRepository('GajdawBDDTutorialGeographyBundle:Mountain')->findAll();
+            $paginator  = $this->get('knp_paginator');
+            $pagination = $paginator->paginate(
+            $query,
+            $page,
+            3
+            );
 
-        return array(
-            'entities' => $entities,
-        );
-    }
+        // parameters to template
+            return array(
+            'pagination' => $pagination
+            );
+        }
     /**
      * Creates a new Mountain entity.
      *
