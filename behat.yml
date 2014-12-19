@@ -12,7 +12,8 @@ default:
 
     extensions:
         Behat\MinkExtension:
-            base_url:  'http://localhost/'
+            # turn on .htaccess on travis - AllowOverride All
+            base_url:  'http://localhost/app.php/'
             sessions:
                 default:
                     goutte: ~
