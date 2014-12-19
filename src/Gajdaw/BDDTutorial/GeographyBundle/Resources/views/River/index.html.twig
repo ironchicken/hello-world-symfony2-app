@@ -3,6 +3,14 @@
 {% block body -%}
     <h1>River list</h1>
 
+    <div class="count">
+        Number of records: {{ pagination.getTotalItemCount }}
+    </div>
+
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -13,14 +21,14 @@
             </tr>
         </thead>
         <tbody>
-        {% for entity in entities %}
+        {% for river in pagination %}
             <tr>
                 <td>{{ loop.index }}.</td>
-                <td><a href="{{ path('river_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
-                <td>{{ entity.length }}</td>
+                <td><a href="{{ path('river_show', { 'id': river.id }) }}">{{ river.name }}</a></td>
+                <td>{{ river.length }}</td>
                 <td>
-                    <a href="{{ path('river_show', { 'id': entity.id }) }}" class="btn btn-default" role="button">show</a>
-                    <a href="{{ path('river_edit', { 'id': entity.id }) }}" class="btn btn-default" role="button">edit</a>
+                    <a href="{{ path('river_show', { 'id': river.id }) }}" class="btn btn-default" role="button">show</a>
+                    <a href="{{ path('river_edit', { 'id': river.id }) }}" class="btn btn-default" role="button">edit</a>
                 </td>
 
             </tr>
