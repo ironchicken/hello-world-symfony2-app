@@ -2,7 +2,15 @@
 
 {% block body -%}
     <h1>Country list</h1>
+    
+    <div class="count">
+        Number of records: {{ pagination.getTotalItemCount }}
+    </div>
 
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>    
+    
     <table class="table table-striped">
         <thead>
             <tr>
@@ -13,14 +21,14 @@
             </tr>
         </thead>
         <tbody>
-        {% for entity in entities %}
+        {% for country in pagination %}
             <tr>
                 <td>{{ loop.index }}.</td>
-                <td><a href="{{ path('country_show', { 'id': entity.id }) }}">{{ entity.country }}</a></td>
-                <td>{{ entity.area }}</td>
+                <td><a href="{{ path('country_show', { 'id': country.id }) }}">{{ country.country }}</a></td>
+                <td>{{ country.area }}</td>
                 <td>
-                    <a href="{{ path('country_show', { 'id': entity.id }) }}" class="btn btn-default" role="button">show</a>
-                    <a href="{{ path('country_edit', { 'id': entity.id }) }}" class="btn btn-default" role="button">edit</a>
+                    <a href="{{ path('country_show', { 'id': country.id }) }}" class="btn btn-default" role="button">show</a>
+                    <a href="{{ path('country_edit', { 'id': country.id }) }}" class="btn btn-default" role="button">edit</a>
                 </td>
             </tr>
         {% endfor %}

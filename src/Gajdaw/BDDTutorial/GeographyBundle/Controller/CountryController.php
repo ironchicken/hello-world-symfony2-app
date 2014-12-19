@@ -25,14 +25,20 @@ class CountryController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
+    public function indexAction($page = 1)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('GajdawBDDTutorialGeographyBundle:Country')->findAll();
-
+        $em = $this->get('doctrine.orm.entity_manager');
+        $dql   = "SELECT c FROM GajdawBDDTutorialGeographyBundle:Country c";
+        $query = $em->createQuery($dql);
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $page,
+            3
+        )
+                ;
         return array(
-            'entities' => $entities,
+            'pagination' => $pagination,
         );
     }
     /**
