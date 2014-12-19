@@ -21,18 +21,26 @@ class DesertController extends Controller
     /**
      * Lists all Desert entities.
      *
-     * @Route("/", name="desert")
+     * @Route("/{page}", name="desert")
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
+    public function indexAction($page = 1)
     {
-        $em = $this->getDoctrine()->getManager();
+        $em    = $this->get('doctrine.orm.entity_manager');
+        $dql   = "SELECT d FROM GajdawBDDTutorialGeographyBundle:Desert d";
+        $query = $em->createQuery($dql);
 
-        $entities = $em->getRepository('GajdawBDDTutorialGeographyBundle:Desert')->findAll();
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $page,
+            3
+        );
 
+        // parameters to template
         return array(
-            'entities' => $entities,
+            'pagination' => $pagination
         );
     }
     /**
