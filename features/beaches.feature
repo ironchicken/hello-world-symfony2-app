@@ -2,6 +2,7 @@ Feature: I would like to edit beaches
 
   Scenario Outline: Insert records
     When I go to "/beach"
+     And I dump the contents
     Then I should not see "<beach>"
      And I follow "Create a new entry"
     Then I should see "Beach creation"
