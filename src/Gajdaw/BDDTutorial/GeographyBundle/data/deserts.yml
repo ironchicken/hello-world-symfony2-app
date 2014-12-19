@@ -1,3 +1,23 @@
 - { name: Sahara, area: 9064300 }
 - { name: Ogaden, area: 400000 }
 - { name: Gobi, area: 2000000 }
+- { name: Dzungaria, area: 777000 }
+- { name: Ordos, area: 90650 }
+- { name: Arabian Desert, area: 2330000 }
+- { name: Tengger, area: 36700 }
+- { name: Nop, area: 50000 }
+- { name: Cold Desert, area: 7770 }
+- { name: Talak, area: 100000 }
+- { name: Ténéré, area: 400000 }
+- { name: Chihuahuan Desert, area: 362000 }
+- { name: Sonoran Desert, area: 280000 }
+- { name: Gread Sand Sea, area: 72000 }
+- { name: Libyan Desert, area: 1100000 }
+- { name: Ubari, area: 58000 }
+- { name: Rebiana Sand Sea, area: 65000 }
+- { name: Murzuq, area: 58000 }
+- { name: Cholistan Desert, area: 26300 }
+- { name: Syrian Desert, area: 500000 }
+- { name: Tabernas, area: 280 }
+- { name: Qattara, area: 19605 }
+- { name: Karakum, area: 350000 }
