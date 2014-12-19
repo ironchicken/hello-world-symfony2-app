@@ -3,30 +3,38 @@
 {% block body -%}
     <h1>Desert list</h1>
 
-    <table class="table table-striped">
+    <div class="count">
+        Number of records: {{ pagination.getTotalItemCount }}
+    </div>
 
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Area</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for entity in entities %}
-                <tr>
-                <td>{{ loop.index }}.</td>
-                    <td><a href="{{ path('desert_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
-                    <td>{{ entity.area }}</td>
-                    <td>
-                    <a href="{{ path('desert_show', { 'id': entity.id }) }}" class="btn btn-default" role="button">show</a>
-                    <a href="{{ path('desert_edit', { 'id': entity.id }) }}" class="btn btn-default" role="button">edit</a>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Area</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for desert in pagination %}
+        <tr>
+            <td>{{ loop.index }}.</td>
+            <td><a href="{{ path('desert_show', { 'id': desert.id }) }}">{{ desert.name }}</a></td>
+            <td>{{ desert.area }}</td>
+            <td>
+                <a href="{{ path('desert_show', { 'id': desert.id }) }}" class="btn btn-default" role="button">show</a>
+                <a href="{{ path('desert_edit', { 'id': desert.id }) }}" class="btn btn-default" role="button">edit</a>
+            </td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
 
         <p>
             <a
