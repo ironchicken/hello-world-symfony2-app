@@ -6,6 +6,8 @@ then
     exit 1
 fi
 
+chmod u+x /tmp/symfony2app/vendor/behat/behat/bin/behat
+
 mkdir -p /tmp/symfony2app/app/cache
 mkdir -p /tmp/symfony2app/app/logs
 mkdir -p /tmp/symfony2app/vendor/
