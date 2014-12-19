@@ -12,9 +12,9 @@ Feature: I would like to edit beaches
      And I should see "<size>"
 
   Examples:
-    |    beach                    | size   |
-    | Example Praia do Cassino    | 212    |
-    | Example 90 Mile Beach       | 151    |
+    |    beach                        | size   |
+    | Example The Praia do Cassino    | 212    |
+    | Example The 90 Mile Beach       | 151    |
 
 
   Scenario Outline: Edit records
@@ -32,8 +32,8 @@ Feature: I would like to edit beaches
      And I should not see "<old-beach>"
 
   Examples:
-    |  old-beach                |    new-beach            | new-size   |
-    | Example Praia do Cassino  | EDITED Praia do Cassino | 212        |
+    |  old-beach                    |    new-beach                | new-size   |
+    | Example The Praia do Cassino  | EDITED The Praia do Cassino | 212        |
 
 
 
@@ -46,6 +46,6 @@ Feature: I would like to edit beaches
      And I should not see "<beach>"
 
   Examples:
-    |  beach                      |
-    | Example 90 Mile Beach       |
-    | EDITED Praia do Cassino     |
+    |  beach                          |
+    | Example The 90 Mile Beach       |
+    | EDITED The Praia do Cassino     |
