@@ -8,7 +8,6 @@
 /build/
 /vendor/
 /bin/
-!/bin/behat2
 /composer.phar
 /.vagrant/
 /.idea/
