@@ -21,7 +21,7 @@ class RiverController extends Controller
     /**
      * Lists all River entities.
      *
-     * @Route("/{page}", name="river")
+     * @Route("/{page}", name="river", requirements={"page": "\d+"})
      * @Method("GET")
      * @Template()
      */
