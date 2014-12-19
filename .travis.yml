@@ -19,6 +19,9 @@ install:
 
 before_script:
 
+  - composer self-update
+
+
   - mkdir -p /tmp/symfony2app/app/cache
   - mkdir -p /tmp/symfony2app/app/logs
   - mkdir -p /tmp/symfony2app/vendor/
@@ -30,6 +33,12 @@ before_script:
   - ls -la /tmp/symfony2app/app/logs
   - ls -la /tmp/symfony2app/vendor
 
+
+  - composer install --no-interaction
+  - pwd
+  - ls -la
+
+
   - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
   - app/console cache:warmup --env=dev
   - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
@@ -38,10 +47,6 @@ before_script:
   - ls -la /tmp/symfony2app/app/logs
 
 
-  - composer self-update
-  - composer install --no-interaction
-  - pwd
-  - ls -la
 
 #  - ls -la app
 #  - ls -la app/logs
