@@ -13,8 +13,8 @@ Feature: I would like to edit beaches
 
   Examples:
     |    beach                    | size   |
-    | Example Praia do Cassino    | 212   |
-    | Example 90 Mile Beach       | 151   |
+    | Example Praia do Cassino    | 212    |
+    | Example 90 Mile Beach       | 151    |
 
 
   Scenario Outline: Edit records
