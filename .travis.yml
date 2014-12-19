@@ -120,7 +120,7 @@ before_script:
   - sleep 5
 
 script:
-  - bin/behat --verbose --stop-on-failure
+  - bin/behat --verbose --stop-on-failure features/rivers.feature
 
 notifications:
   email: false
