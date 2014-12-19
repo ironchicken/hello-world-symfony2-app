@@ -18,9 +18,9 @@ class LoadMountains implements FixtureInterface
         $filename = __DIR__ . '/../../data/mountains.yml';
         $yml = Yaml::parse(file_get_contents($filename));
         foreach ($yml as $item) {
-            $river = new Mountain();
-            $river->setName($item['name']);
-            $river->setLength($item['hight']);
+            $mountain = new Mountain();
+            $mountain->setName($item['name']);
+            $mountain->setHight($item['hight']);
             $manager->persist($mountain);
         }
 

@@ -20,7 +20,7 @@ class LoadDeserts implements FixtureInterface
         foreach ($yml as $item) {
             $desert = new Desert();
             $desert->setName($item['name']);
-            $desert->setArea($item['length']);
+            $desert->setArea($item['area']);
             $manager->persist($desert);
         }
 
