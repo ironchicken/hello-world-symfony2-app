@@ -18,59 +18,88 @@ install:
   - sudo /etc/init.d/apache2 restart
 
 before_script:
+
+  - mkdir -p /tmp/symfony2app/app/cache
+  - mkdir -p /tmp/symfony2app/app/logs
+  - mkdir -p /tmp/symfony2app/vendor/
+
+  - ls -la /tmp
+  - ls -la /tmp/symfony2app
+  - ls -la /tmp/symfony2app/app
+  - ls -la /tmp/symfony2app/app/cache
+  - ls -la /tmp/symfony2app/app/logs
+  - ls -la /tmp/symfony2app/vendor
+
+  - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
+  - app/console cache:warmup --env=dev
+  - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
+
+  - ls -la /tmp/symfony2app/app/cache
+  - ls -la /tmp/symfony2app/app/logs
+
+
   - composer self-update
   - composer install --no-interaction
   - pwd
   - ls -la
-  - ls -la app
-  - ls -la app/logs
-  - ls -la app/cache
-  - sudo chmod -R 777 app/cache app/logs
-  - app/console cache:warmup --env=dev
-  - sudo chmod -R 777 app/cache app/logs
-  - ls -la app
-  - ls -la app/logs
-  - ls -la app/cache
+
+#  - ls -la app
+#  - ls -la app/logs
+#  - ls -la app/cache
+#  - sudo chmod -R 777 app/cache app/logs
+#  - app/console cache:warmup --env=dev
+#  - sudo chmod -R 777 app/cache app/logs
+#  - ls -la app
+#  - ls -la app/logs
+#  - ls -la app/cache
 
 
-  - chmod o+w app/logs
-  - ls -la app
-
+#  - chmod o+w app/logs
+#  - ls -la app
+  - chmod o+w /tmp/symfony2app/app/logs
+  - ls -la /tmp/symfony2app/app
 
   - mysql -u root < 00-extra/db/create-empty-database.sql
   - app/console doctrine:schema:update --force
-  - ls -la app
-  - ls -la app/logs
 
 
-  - sudo chmod -R 777 app/cache app/logs
-  - ls -la app
-  - ls -la app/logs
-  - ls -la app/cache
+#  - sudo chmod -R 777 app/cache app/logs
+#  - ls -la app
+#  - ls -la app/logs
+#  - ls -la app/cache
 
 
+  - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
+  - ls -la /tmp/symfony2app/app/cache
+  - ls -la /tmp/symfony2app/app/logs
 
 
 #change ownership
-  - chown -R travis:travis app/logs
-  - ls -la app
-  - ls -la app/logs
+#  - chown -R travis:travis app/logs
+#  - ls -la app
+#  - ls -la app/logs
+  - chown -R travis:travis /tmp/symfony2app/app/logs
+  - ls -la /tmp/symfony2app/app
+  - ls -la /tmp/symfony2app/app/logs
 
 #change the rights right before you run application
-  - chmod -R 777 app/cache app/logs
-  - ls -la app
-  - ls -la app/logs
+#  - chmod -R 777 app/cache app/logs
+#  - ls -la app
+#  - ls -la app/logs
+  - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
+  - ls -la /tmp/symfony2app/app/cache
+  - ls -la /tmp/symfony2app/app/logs
 
 
 #change the rights right before you run application
-  - chmod -R 777 app/logs/dev.log
-  - ls -la app
-  - ls -la app/logs
+#  - chmod -R 777 app/logs/dev.log
+#  - ls -la app
+#  - ls -la app/logs
 
 #change the rights right before you run application
-  - sudo chmod -R 777 app/logs/dev.log
-  - ls -la app
-  - ls -la app/logs
+#  - sudo chmod -R 777 app/logs/dev.log
+#  - ls -la app
+#  - ls -la app/logs
 
 
 #Sessions go to /tmp/sessions
