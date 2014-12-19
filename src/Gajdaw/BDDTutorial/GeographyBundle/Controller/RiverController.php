@@ -17,6 +17,31 @@ use Gajdaw\BDDTutorial\GeographyBundle\Form\RiverType;
  */
 class RiverController extends Controller
 {
+    /**
+     * Lists all River entities.
+     *
+     * @Route("/pager/{page}", name="river", requirements={"page": "\d+"})
+     * @Method("GET")
+     * @Template()
+     */
+    public function indexAction($page = 1)
+    {
+        $em    = $this->get('doctrine.orm.entity_manager');
+        $dql   = "SELECT r FROM GajdawBDDTutorialGeographyBundle:River r";
+        $query = $em->createQuery($dql);
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $page,
+            3
+        );
+
+        // parameters to template
+        return array(
+            'pagination' => $pagination
+        );
+    }
 
     /**
      * Creates a new River entity.
@@ -227,32 +252,5 @@ class RiverController extends Controller
             ->getForm()
         ;
     }
-
-    /**
-     * Lists all River entities.
-     *
-     * @Route("/{page}", name="river", requirements={"page": "\d+"})
-     * @Method("GET")
-     * @Template()
-     */
-    public function indexAction($page = 1)
-    {
-        $em    = $this->get('doctrine.orm.entity_manager');
-        $dql   = "SELECT r FROM GajdawBDDTutorialGeographyBundle:River r";
-        $query = $em->createQuery($dql);
-
-        $paginator  = $this->get('knp_paginator');
-        $pagination = $paginator->paginate(
-            $query,
-            $page,
-            3
-        );
-
-        // parameters to template
-        return array(
-            'pagination' => $pagination
-        );
-    }
-
 
 }

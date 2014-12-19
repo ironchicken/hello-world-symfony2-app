@@ -18,6 +18,32 @@ use Gajdaw\BDDTutorial\GeographyBundle\Form\MountainType;
 class MountainController extends Controller
 {
     /**
+     * Lists all Mountains entities.
+     *
+     * @Route("/pager/{page}", name="mountain", requirements={"page": "\d+"})
+     * @Method("GET")
+     * @Template()
+     */
+    public function indexAction($page = 1)
+    {
+        $em    = $this->get('doctrine.orm.entity_manager');
+        $dql   = "SELECT m FROM GajdawBDDTutorialGeographyBundle:Mountain m";
+        $query = $em->createQuery($dql);
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $page,
+            3
+        );
+
+        // parameters to template
+        return array(
+            'pagination' => $pagination
+        );
+    }
+
+    /**
      * Creates a new Mountain entity.
      *
      * @Route("/", name="mountain_create")
@@ -225,32 +251,6 @@ class MountainController extends Controller
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
-    }
-
-    /**
-     * Lists all Mountains entities.
-     *
-     * @Route("/{page}", name="mountain", requirements={"page": "\d+"})
-     * @Method("GET")
-     * @Template()
-     */
-    public function indexAction($page = 1)
-    {
-        $em    = $this->get('doctrine.orm.entity_manager');
-        $dql   = "SELECT m FROM GajdawBDDTutorialGeographyBundle:Mountain m";
-        $query = $em->createQuery($dql);
-
-        $paginator  = $this->get('knp_paginator');
-        $pagination = $paginator->paginate(
-            $query,
-            $page,
-            3
-        );
-
-        // parameters to template
-        return array(
-            'pagination' => $pagination
-        );
     }
 
 }

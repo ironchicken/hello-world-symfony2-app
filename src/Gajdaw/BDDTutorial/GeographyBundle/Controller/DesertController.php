@@ -18,6 +18,32 @@ use Gajdaw\BDDTutorial\GeographyBundle\Form\DesertType;
 class DesertController extends Controller
 {
     /**
+     * Lists all Desert entities.
+     *
+     * @Route("/pager/{page}", name="desert", requirements={"page": "\d+"})
+     * @Method("GET")
+     * @Template()
+     */
+    public function indexAction($page = 1)
+    {
+        $em    = $this->get('doctrine.orm.entity_manager');
+        $dql   = "SELECT d FROM GajdawBDDTutorialGeographyBundle:Desert d";
+        $query = $em->createQuery($dql);
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $page,
+            3
+        );
+
+        // parameters to template
+        return array(
+            'pagination' => $pagination
+        );
+    }
+
+    /**
      * Creates a new Desert entity.
      *
      * @Route("/", name="desert_create")
@@ -225,32 +251,6 @@ class DesertController extends Controller
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
-    }
-
-    /**
-     * Lists all Desert entities.
-     *
-     * @Route("/{page}", name="desert", requirements={"page": "\d+"})
-     * @Method("GET")
-     * @Template()
-     */
-    public function indexAction($page = 1)
-    {
-        $em    = $this->get('doctrine.orm.entity_manager');
-        $dql   = "SELECT d FROM GajdawBDDTutorialGeographyBundle:Desert d";
-        $query = $em->createQuery($dql);
-
-        $paginator  = $this->get('knp_paginator');
-        $pagination = $paginator->paginate(
-            $query,
-            $page,
-            3
-        );
-
-        // parameters to template
-        return array(
-            'pagination' => $pagination
-        );
     }
 
 }

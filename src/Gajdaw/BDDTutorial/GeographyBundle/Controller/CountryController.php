@@ -18,6 +18,30 @@ use Gajdaw\BDDTutorial\GeographyBundle\Form\CountryType;
 class CountryController extends Controller
 {
     /**
+     * Lists all Country entities.
+     *
+     * @Route("/pager/{page}", name="country", requirements={"page": "\d+"})
+     * @Method("GET")
+     * @Template()
+     */
+    public function indexAction($page = 1)
+    {
+        $em = $this->get('doctrine.orm.entity_manager');
+        $dql   = "SELECT c FROM GajdawBDDTutorialGeographyBundle:Country c";
+        $query = $em->createQuery($dql);
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $page,
+            3
+        )
+        ;
+        return array(
+            'pagination' => $pagination,
+        );
+    }
+
+    /**
      * Creates a new Country entity.
      *
      * @Route("/", name="country_create")
@@ -225,30 +249,6 @@ class CountryController extends Controller
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
-    }
-
-    /**
-     * Lists all Country entities.
-     *
-     * @Route("/", name="country", requirements={"page": "\d+"})
-     * @Method("GET")
-     * @Template()
-     */
-    public function indexAction($page = 1)
-    {
-        $em = $this->get('doctrine.orm.entity_manager');
-        $dql   = "SELECT c FROM GajdawBDDTutorialGeographyBundle:Country c";
-        $query = $em->createQuery($dql);
-        $paginator  = $this->get('knp_paginator');
-        $pagination = $paginator->paginate(
-            $query,
-            $page,
-            3
-        )
-        ;
-        return array(
-            'pagination' => $pagination,
-        );
     }
 
 }

@@ -1,7 +1,7 @@
 Feature: I would like to edit deserts
 
   Scenario Outline: Insert records
-    When I go to "/desert"
+    When I go to "/desert/pager"
     Then I should not see "<desert>"
      And I follow "Create a new entry"
     Then I should see "Desert creation"
@@ -18,7 +18,7 @@ Feature: I would like to edit deserts
 
 
   Scenario Outline: Edit records
-    When I go to "/desert"
+    When I go to "/desert/pager"
     Then I should not see "<new-desert>"
      And I follow "<old-desert>"
     Then I should see "<old-desert>"
@@ -38,7 +38,7 @@ Feature: I would like to edit deserts
 
 
   Scenario Outline: Delete records
-    When I go to "/desert"
+    When I go to "/desert/pager"
     Then I should see "<desert>"
      And I follow "<desert>"
     Then I should see "<desert>"

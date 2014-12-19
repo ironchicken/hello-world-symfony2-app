@@ -1,7 +1,7 @@
 Feature: I would like to edit rivers
 
   Scenario Outline: Insert records
-    When I go to "/river"
+    When I go to "/river/pager"
     Then I should not see "<river>"
      And I follow "Create a new entry"
     Then I should see "River creation"
@@ -18,7 +18,7 @@ Feature: I would like to edit rivers
 
 
   Scenario Outline: Edit records
-    When I go to "/river"
+    When I go to "/river/pager"
     Then I should not see "<new-river>"
      And I follow "<old-river>"
     Then I should see "<old-river>"
@@ -38,7 +38,7 @@ Feature: I would like to edit rivers
 
 
   Scenario Outline: Delete records
-    When I go to "/river"
+    When I go to "/river/pager"
     Then I should see "<river>"
      And I follow "<river>"
     Then I should see "<river>"

@@ -1,7 +1,7 @@
 Feature: I would like to edit mountains
 
   Scenario Outline: Insert records
-    When I go to "/mountain"
+    When I go to "/mountain/pager"
     Then I should not see "<mountain>"
      And I follow "Create a new entry"
     Then I should see "Mountain creation"
@@ -18,7 +18,7 @@ Feature: I would like to edit mountains
 
 
   Scenario Outline: Edit records
-    When I go to "/mountain"
+    When I go to "/mountain/pager"
     Then I should not see "<new-mountain>"
      And I follow "<old-mountain>"
     Then I should see "<old-mountain>"
@@ -38,7 +38,7 @@ Feature: I would like to edit mountains
 
 
   Scenario Outline: Delete records
-    When I go to "/mountain"
+    When I go to "/mountain/pager"
     Then I should see "<mountain>"
      And I follow "<mountain>"
     Then I should see "<mountain>"

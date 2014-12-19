@@ -1,7 +1,7 @@
 Feature: I would like to edit continents
 
   Scenario Outline: Insert records
-    When I go to "/continent"
+    When I go to "/continent/pager"
     Then I should not see "<continent>"
      And I follow "Create a new entry"
     Then I should see "Continent creation"
@@ -18,7 +18,7 @@ Feature: I would like to edit continents
 
 
   Scenario Outline: Edit records
-    When I go to "/continent"
+    When I go to "/continent/pager"
     Then I should not see "<new-continent>"
      And I follow "<old-continent>"
     Then I should see "<old-continent>"
@@ -38,7 +38,7 @@ Feature: I would like to edit continents
 
 
   Scenario Outline: Delete records
-    When I go to "/continent"
+    When I go to "/continent/pager"
     Then I should see "<continent>"
      And I follow "<continent>"
     Then I should see "<continent>"

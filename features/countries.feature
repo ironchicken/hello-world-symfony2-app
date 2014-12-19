@@ -1,7 +1,7 @@
 Feature: I would like to edit countries
 
   Scenario Outline: Insert records
-    When I go to "/country"
+    When I go to "/country/pager"
     Then I should not see "<country>"
      And I follow "Create a new entry"
     Then I should see "Country creation"
@@ -18,7 +18,7 @@ Feature: I would like to edit countries
 
 
   Scenario Outline: Edit records
-    When I go to "/country"
+    When I go to "/country/pager"
     Then I should not see "<new-country>"
      And I follow "<old-country>"
     Then I should see "<old-country>"
@@ -38,7 +38,7 @@ Feature: I would like to edit countries
 
 
   Scenario Outline: Delete records
-    When I go to "/country"
+    When I go to "/country/pager"
     Then I should see "<country>"
      And I follow "<country>"
     Then I should see "<country>"
