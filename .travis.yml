@@ -41,6 +41,7 @@ before_script:
 
   - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
   - app/console cache:warmup --env=dev
+  - app/console cache:warmup --env=prod
   - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
 
   - ls -la /tmp/symfony2app/app/cache
