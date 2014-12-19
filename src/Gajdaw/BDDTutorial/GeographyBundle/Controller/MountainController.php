@@ -28,7 +28,7 @@ class MountainController extends Controller
        public function indexAction($page = 1)
         {
             $em    = $this->get('doctrine.orm.entity_manager');
-            $dql   = "SELECT r FROM GajdawBDDTutorialGeographyBundle:River r";
+            $dql   = "SELECT m FROM GajdawBDDTutorialGeographyBundle:Mountain m";
             $query = $em->createQuery($dql);
 
             $paginator  = $this->get('knp_paginator');
