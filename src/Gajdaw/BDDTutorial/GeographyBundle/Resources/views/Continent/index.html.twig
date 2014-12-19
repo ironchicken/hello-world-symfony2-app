@@ -3,6 +3,14 @@
 {% block body -%}
     <h1>Continent list</h1>
 
+    <div class="count">
+        Number of records: {{ pagination.getTotalItemCount }}
+    </div>
+
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -13,14 +21,14 @@
             </tr>
         </thead>
         <tbody>
-        {% for entity in entities %}
+        {% for continent in pagination %}
             <tr>
                 <td>{{ loop.index }}.</td>
-                <td><a href="{{ path('continent_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
-                <td>{{ entity.area }}</td>
+                <td><a href="{{ path('continent_show', { 'id': continent.id }) }}">{{ continent.name }}</a></td>
+                <td>{{ continent.area }}</td>
                 <td>
-                    <a href="{{ path('continent_show', { 'id': entity.id }) }}" class="btn btn-default" role="button">show</a>
-                    <a href="{{ path('continent_edit', { 'id': entity.id }) }}" class="btn btn-default" role="button">edit</a>
+                    <a href="{{ path('continent_show', { 'id': continent.id }) }}" class="btn btn-default" role="button">show</a>
+                    <a href="{{ path('continent_edit', { 'id': continent.id }) }}" class="btn btn-default" role="button">edit</a>
                 </td>
             </tr>
         {% endfor %}
