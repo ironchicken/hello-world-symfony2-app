@@ -17,32 +17,6 @@ use Gajdaw\BDDTutorial\GeographyBundle\Form\ContinentType;
  */
 class ContinentController extends Controller
 {
-
-    /**
-     * Lists all Continent entities.
-     *
-     * @Route("/", name="continent")
-     * @Method("GET")
-     * @Template()
-     */
-    public function indexAction($page = 1) {
-        $em = $this->get('doctrine.orm.entity_manager');
-        $dql = "SELECT c FROM GajdawBDDTutorialGeographyBundle:Continent c";
-        $query = $em->createQuery($dql);
-
-        $paginator = $this->get('knp_paginator');
-        $pagination = $paginator->paginate(
-                $query, 
-                $page, 
-                3
-        );
-
-        // parameters to template
-        return array(
-            'pagination' => $pagination
-        );
-    }
-
     /**
      * Creates a new Continent entity.
      *
@@ -252,4 +226,30 @@ class ContinentController extends Controller
             ->getForm()
         ;
     }
+
+    /**
+     * Lists all Continent entities.
+     *
+     * @Route("/", name="continent", requirements={"page": "\d+"})
+     * @Method("GET")
+     * @Template()
+     */
+    public function indexAction($page = 1) {
+        $em = $this->get('doctrine.orm.entity_manager');
+        $dql = "SELECT c FROM GajdawBDDTutorialGeographyBundle:Continent c";
+        $query = $em->createQuery($dql);
+
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $page,
+            3
+        );
+
+        // parameters to template
+        return array(
+            'pagination' => $pagination
+        );
+    }
+
 }
