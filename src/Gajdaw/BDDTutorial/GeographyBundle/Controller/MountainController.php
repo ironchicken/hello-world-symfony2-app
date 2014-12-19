@@ -19,7 +19,7 @@ class MountainController extends Controller
 {
 
     /**
-    * Lists all River entities.
+    * Lists all Mountains entities.
     *
     * @Route("/{page}", name="mountain")
     * @Method("GET")
