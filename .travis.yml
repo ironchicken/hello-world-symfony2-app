@@ -33,8 +33,18 @@ install:
   - sudo puppet module install puppetlabs-mysql
   - sudo puppet apply puppet/manifest.pp
 
+# Change the default Apache's web page into APP
+  - sudo ls -ls /var/
+  - sudo ls -ls /var/www
+  - sudo ls -ls /var/www/html
+
+  - sudo rm -rf /var/www/html
   - sudo mkdir -p /var/www
   - sudo ln -s  "$(pwd)/web" /var/www/html
+
+  - sudo ls -ls /var/
+  - sudo ls -ls /var/www
+  - sudo ls -ls /var/www/html
 
 
   - sudo /etc/init.d/apache2 restart
