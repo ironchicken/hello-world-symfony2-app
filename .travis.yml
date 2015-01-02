@@ -15,9 +15,9 @@ install:
 
   - sudo puppet module install puppetlabs-stdlib
   - sudo puppet module install gajdaw-php5
-  - sudo puppet apply puppet/php5.pp
+  - sudo puppet module install puppetlabs-mysql
+  - sudo puppet apply puppet/manifest.pp
 
-  - sudo puppet apply puppet/modules/mysql/manifests/init.pp
 
   - sudo /etc/init.d/apache2 restart
 
