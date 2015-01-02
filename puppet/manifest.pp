@@ -1,4 +1,4 @@
-include php5
+class { 'php5':  username => 'travis'; }
 
 class { 'mysql::server': }
 
