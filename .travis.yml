@@ -7,6 +7,8 @@ before_install:
   - php --info
   - sudo pwd
   - whoami
+  - groups travis
+  - cat /etc/passwd
   - sudo apt-get update -y
 
 install:
