@@ -136,10 +136,22 @@ before_script:
   - ls -la /tmp/sessions
   - ls -la /tmp
 
-
-
-
   - sleep 5
+
+after_failure:
+
+  #Print app's log
+  - ls -la /tmp/symfony2app/app/logs
+#  - cat /tmp/symfony2app/app/logs/dev.log
+  - cat /tmp/symfony2app/app/logs/prod.log
+
+  #Print Apache's log
+  - ls -la /var/
+  - ls -la /var/log/
+  - ls -la /var/log/apache/
+
+
+
 
 script:
   - bin/behat --verbose --stop-on-failure
