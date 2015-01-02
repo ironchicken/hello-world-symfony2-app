@@ -13,6 +13,8 @@ install:
   - sudo mkdir -p /var/www
   - sudo ln -s  "$(pwd)/web" /var/www/html
 
+  - sudo puppet --version
+
   - sudo puppet module install puppetlabs-stdlib
   - sudo puppet module install gajdaw-php5
   - sudo puppet module install puppetlabs-mysql
