@@ -142,18 +142,22 @@ after_failure:
 
   #Print app's log
   - ls -la /tmp/symfony2app/app/logs
+  - ls -la /tmp/symfony2app/app/logs/prod
 #  - cat /tmp/symfony2app/app/logs/dev.log
-  - cat /tmp/symfony2app/app/logs/prod.log
+  - cat /tmp/symfony2app/app/logs/prod/prod.log
 
   #Print Apache's log
   - ls -la /var/
   - ls -la /var/log/
-  - ls -la /var/log/apache/
+  - ls -la /var/log/apache2/
 
 
 
 
 script:
+  - bin/behat --verbose features/home.feature
+  - bin/behat --verbose features/rivers.feature
+
   - bin/behat --verbose --stop-on-failure
 
 notifications:
