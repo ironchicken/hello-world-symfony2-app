@@ -13,27 +13,23 @@ before_install:
 
 install:
 
-# Install latest version of Puppet
-# Default version 2.7 does not allow to use modules
-
-#  - sudo apt-get install -y --force-yes puppet
-#  - sudo puppet --version
-
-
+  # Install latest version of Puppet
+  # Default version 2.7 does not allow to use modules
   - sudo wget https://apt.puppetlabs.com/puppetlabs-release-precise.deb
   - sudo dpkg -i puppetlabs-release-precise.deb
   - sudo apt-get update -y
   - sudo apt-get install puppet -y
-
   - sudo puppet --version
 
 
+  # Install Apache & Php & MySQL
   - sudo puppet module install puppetlabs-stdlib
   - sudo puppet module install gajdaw-php5
   - sudo puppet module install puppetlabs-mysql
   - sudo puppet apply puppet/manifest.pp
 
-# Change the default Apache's web page into APP
+
+  # Change the default Apache's web page into APP
   - sudo ls -ls /var/
   - sudo ls -ls /var/www
   - sudo ls -ls /var/www/html
@@ -46,13 +42,11 @@ install:
   - sudo ls -ls /var/www
   - sudo ls -ls /var/www/html
 
-
   - sudo /etc/init.d/apache2 restart
 
 before_script:
 
   - composer self-update
-
 
   - mkdir -p /tmp/symfony2app/app/cache
   - mkdir -p /tmp/symfony2app/app/logs
@@ -65,14 +59,12 @@ before_script:
   - ls -la /tmp/symfony2app/app/logs
   - ls -la /tmp/symfony2app/vendor
 
-
   - composer install --no-interaction
   - pwd
   - ls -la
 
-
   - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
-  - app/console cache:warmup --env=dev
+  #- app/console cache:warmup --env=dev
   - app/console cache:warmup --env=prod
   - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
 
@@ -80,71 +72,32 @@ before_script:
   - ls -la /tmp/symfony2app/app/logs
 
 
-
-#  - ls -la app
-#  - ls -la app/logs
-#  - ls -la app/cache
-#  - sudo chmod -R 777 app/cache app/logs
-#  - app/console cache:warmup --env=dev
-#  - sudo chmod -R 777 app/cache app/logs
-#  - ls -la app
-#  - ls -la app/logs
-#  - ls -la app/cache
-
-
-#  - chmod o+w app/logs
-#  - ls -la app
   - chmod o+w /tmp/symfony2app/app/logs
   - ls -la /tmp/symfony2app/app
 
   - mysql -u root < 00-extra/db/create-empty-database.sql
   - app/console doctrine:schema:update --force
 
-
-#  - sudo chmod -R 777 app/cache app/logs
-#  - ls -la app
-#  - ls -la app/logs
-#  - ls -la app/cache
-
-
   - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
   - ls -la /tmp/symfony2app/app/cache
   - ls -la /tmp/symfony2app/app/logs
 
-
-#change ownership
-#  - chown -R travis:travis app/logs
-#  - ls -la app
-#  - ls -la app/logs
+  #change ownership
   - chown -R travis:travis /tmp/symfony2app/app/logs
   - ls -la /tmp/symfony2app/app
   - ls -la /tmp/symfony2app/app/logs
 
-#change the rights right before you run application
-#  - chmod -R 777 app/cache app/logs
-#  - ls -la app
-#  - ls -la app/logs
+  #change the rights right before running the tests
   - sudo chmod -R 777 /tmp/symfony2app/app/cache /tmp/symfony2app/app/logs
   - ls -la /tmp/symfony2app/app/cache
   - ls -la /tmp/symfony2app/app/logs
 
 
-#change the rights right before you run application
-#  - chmod -R 777 app/logs/dev.log
-#  - ls -la app
-#  - ls -la app/logs
-
-#change the rights right before you run application
-#  - sudo chmod -R 777 app/logs/dev.log
-#  - ls -la app
-#  - ls -la app/logs
-
-
-#Sessions go to /tmp/sessions
-  - sudo mkdir -p /tmp/sessions
-  - sudo chmod -R 777 /tmp/sessions
-  - ls -la /tmp/sessions
-  - ls -la /tmp
+  #Sessions go to /tmp/sessions
+  #- sudo mkdir -p /tmp/sessions
+  #- sudo chmod -R 777 /tmp/sessions
+  #- ls -la /tmp/sessions
+  #- ls -la /tmp
 
   - sleep 5
 
@@ -164,8 +117,8 @@ after_failure:
 
 
 script:
-  - bin/behat --verbose features/home.feature
-  - bin/behat --verbose features/rivers.feature
+  # When debugging use just one test and dump the contents
+  #- bin/behat --verbose features/home.feature
 
   - bin/behat --verbose --stop-on-failure
 
