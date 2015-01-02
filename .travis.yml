@@ -151,17 +151,16 @@ before_script:
 after_failure:
 
   #Print app's log
-  - ls -la /tmp/symfony2app/app/logs
-  - ls -la /tmp/symfony2app/app/logs/prod
+  - sudo ls -la /tmp/symfony2app/app/logs
+  - sudo ls -la /tmp/symfony2app/app/logs/prod
+  - sudo ls -la /tmp/symfony2app/app/logs/prod/log
 #  - cat /tmp/symfony2app/app/logs/dev.log
-  - cat /tmp/symfony2app/app/logs/prod/prod.log
+#  - cat /tmp/symfony2app/app/logs/prod/prod.log
 
   #Print Apache's log
-  - ls -la /var/
-  - ls -la /var/log/
-  - ls -la /var/log/apache2/
-
-
+  - sudo ls -la /var/
+  - sudo ls -la /var/log/
+  - sudo ls -la /var/log/apache2/
 
 
 script:
