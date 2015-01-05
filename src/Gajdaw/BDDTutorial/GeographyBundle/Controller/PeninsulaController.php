@@ -21,18 +21,26 @@ class PeninsulaController extends Controller
     /**
      * Lists all Peninsula entities.
      *
-     * @Route("/", name="peninsula")
+     * @Route("/pager/{page}", name="peninsula", requirements={"page": "\d+"})
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
+    public function indexAction($page = 1)
     {
-        $em = $this->getDoctrine()->getManager();
+        $em    = $this->get('doctrine.orm.entity_manager');
+        $dql   = "SELECT p FROM GajdawBDDTutorialGeographyBundle:Peninsula p";
+        $query = $em->createQuery($dql);
 
-        $entities = $em->getRepository('GajdawBDDTutorialGeographyBundle:Peninsula')->findAll();
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query,
+            $page,
+            3
+        );
 
+        // parameters to template
         return array(
-            'entities' => $entities,
+            'pagination' => $pagination
         );
     }
     /**
