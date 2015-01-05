@@ -1,7 +1,7 @@
 Feature: I would like to edit peninsulas
 
   Scenario Outline: Insert records
-    When I go to "/peninsula"
+    When I go to "/peninsula/pager"
     Then I should not see "<peninsula>"
      And I follow "Create a new entry"
     Then I should see "Peninsula creation"
@@ -18,7 +18,7 @@ Feature: I would like to edit peninsulas
 
 
   Scenario Outline: Edit records
-    When I go to "/peninsula"
+    When I go to "/peninsula/pager"
     Then I should not see "<new-peninsula>"
      And I follow "<old-peninsula>"
     Then I should see "<old-peninsula>"
@@ -38,7 +38,7 @@ Feature: I would like to edit peninsulas
 
 
   Scenario Outline: Delete records
-    When I go to "/peninsula"
+    When I go to "/peninsula/pager"
     Then I should see "<peninsula>"
      And I follow "<peninsula>"
     Then I should see "<peninsula>"
