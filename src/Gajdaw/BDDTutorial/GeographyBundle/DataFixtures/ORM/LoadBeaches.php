@@ -7,7 +7,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Gajdaw\BDDTutorial\GeographyBundle\Entity\Channel;
 use Symfony\Component\Yaml\Yaml;
 
-class LoadBeaches implements FixtureInterface
+class LoadChannels implements FixtureInterface
 {
     /**
      * {@inheritDoc}
@@ -15,12 +15,12 @@ class LoadBeaches implements FixtureInterface
     public function load(ObjectManager $manager)
     {
 
-        $filename = __DIR__ . '/../../data/beaches.yml';
+        $filename = __DIR__ . '/../../data/channels.yml';
         $yml = Yaml::parse(file_get_contents($filename));
         foreach ($yml as $item) {
-            $beach = new Channel();
-            $beach->setBeach($item['name']);
-            $beach->setSize($item['size']);
+            $channel = new Channel();
+            $channel->setChannel($item['channel']);
+            $channel->setLength($item['length']);
             $manager->persist($channel);
         }
 
