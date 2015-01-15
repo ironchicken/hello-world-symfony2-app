@@ -2,7 +2,6 @@ Feature: I would like to edit beaches
 
   Scenario Outline: Insert records
     When I go to "/beach"
-#     And I dump the contents
     Then I should not see "<beach>"
      And I follow "Create a new entry"
     Then I should see "Beach creation"
@@ -33,8 +32,8 @@ Feature: I would like to edit beaches
      And I should not see "<old-beach>"
 
   Examples:
-    |  old-beach                    |    new-beach                | new-size   |
-    | Example The Praia do Cassino  | EDITED The Praia do Cassino | 212        |
+    |  old-beach                    |    new-beach              | new-size   |
+    | Example The Praia do Cassino  | EDITED The Padre Island   | 150        |
 
 
 
@@ -47,6 +46,6 @@ Feature: I would like to edit beaches
      And I should not see "<beach>"
 
   Examples:
-    |  beach                          |
-    | Example The 90 Mile Beach       |
-    | EDITED The Praia do Cassino     |
+    |  beach                    |
+    | Example The 90 Mile Beach |
+    | EDITED The Padre Island   |
