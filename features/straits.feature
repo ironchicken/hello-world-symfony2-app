@@ -1,7 +1,7 @@
 Feature: I would like to edit straits
 
   Scenario Outline: Insert records
-    When I go to "/strait"
+    When I go to "/strait/pager"
     Then I should not see "<strait>"
      And I follow "Create a new entry"
     Then I should see "Strait creation"
@@ -18,7 +18,7 @@ Feature: I would like to edit straits
 
 
   Scenario Outline: Edit records
-    When I go to "/strait"
+    When I go to "/strait/pager"
     Then I should not see "<new-strait>"
      And I follow "<old-strait>"
     Then I should see "<old-strait>"
@@ -38,7 +38,7 @@ Feature: I would like to edit straits
 
 
   Scenario Outline: Delete records
-    When I go to "/strait"
+    When I go to "/strait/pager"
     Then I should see "<strait>"
      And I follow "<strait>"
     Then I should see "<strait>"
