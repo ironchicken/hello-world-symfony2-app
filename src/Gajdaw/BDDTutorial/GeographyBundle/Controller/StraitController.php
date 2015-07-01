@@ -21,25 +21,18 @@ class StraitController extends Controller
     /**
      * Lists all Strait entities.
      *
-     * @Route("/pager/{page}", name="strait", requirements={"page": "\d+"})
+     * @Route("/", name="strait")
      * @Method("GET")
      * @Template()
      */
-    public function indexAction($page = 1) {
-        $em = $this->get('doctrine.orm.entity_manager');
-        $dql = "SELECT s FROM GajdawBDDTutorialGeographyBundle:Strait s";
-        $query = $em->createQuery($dql);
+    public function indexAction()
+    {
+        $em = $this->getDoctrine()->getManager();
 
-        $paginator = $this->get('knp_paginator');
-        $pagination = $paginator->paginate(
-            $query,
-            $page,
-            3
-        );
+        $entities = $em->getRepository('GajdawBDDTutorialGeographyBundle:Strait')->findAll();
 
-        // parameters to template
         return array(
-            'pagination' => $pagination
+            'entities' => $entities,
         );
     }
     /**
