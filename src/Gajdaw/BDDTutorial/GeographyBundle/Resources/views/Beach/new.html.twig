@@ -3,33 +3,7 @@
 {% block body -%}
     <h1>Beach creation</h1>
 
-    {{ form_start(form) }}
-
-    {{ form_errors(form) }}
-
-    <div class="form-group">
-        {{ form_errors(form.name) }}
-        {{ form_label(form.name, 'Name', {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
-        <div class="col-sm-10">
-            {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
-        </div>
-    </div>
-
-    <div class="form-group">
-        {{ form_errors(form.size) }}
-        {{ form_label(form.size, 'Size', {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
-        <div class="col-sm-10">
-            {{ form_widget(form.size, {'attr': {'class': 'form-control'}}) }}
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            {{ form_widget(form.submit, {'attr': {'class': 'btn btn-default'}}) }}
-        </div>
-    </div>
-
-{{ form_end(form) }}
+    {{ form(form) }}
 
         <ul class="record_actions">
     <li>
