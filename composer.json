@@ -30,7 +30,6 @@
         "behat/mink-selenium2-driver": "~1.2@dev",
         "behat/mink-goutte-driver": "~1.0"
 
-
     },
     "scripts": {
         "post-install-cmd": [
